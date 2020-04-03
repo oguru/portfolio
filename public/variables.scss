@@ -1,0 +1,33 @@
+$base-spacing: 5px;
+$border-radius: 10px;
+$standard-border: black 2px solid;
+
+@mixin h1 {
+    text-align: center;
+    font-weight: 400;
+    margin: $base-spacing*5 0;
+}
+
+@mixin links {
+    padding: $base-spacing;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    width: 150px;
+     text-align: center; 
+}        
+    
+@mixin flex-column {
+         
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row {
+         
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Peter O'Boyle</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
+    <script src="https://kit.fontawesome.com/ad20ab186e.js" crossorigin="anonymous"></script>
+    <script src="./main.js" async defer></script>
+<body>
+
+    <nav id="nav-btn-anim" onmouseover="moveNav()" onmouseout="returnNav()">
+        <a class="nav-text" href="#about">About</a>
+        <a class="nav-text" href="#projects">Projects</a>
+        <a class="nav-text" id="contact-button" onclick="myFunction()">Contact</a>
+        <a class="nav-text" href="#click-me">Click me</a>
+        <div id="nav-icon">
+            <span id="nav-line-1" class="nav-line"></span>
+            <span id="nav-line-2" class="nav-line"></span>
+            <span id="nav-line-3" class="nav-line"></span>
+        </div>
+        <button>
+            <span href="#landing">Top</span>
+        </button>
+    </nav>
+
+    <div id="circles">
+    <!-- <span id = "circle1"></span> -->
+        <span id = "circle2"></span>
+        <span id = "circle3"></span>
+        <span id = "circle4"></span>
+    </div>
+    
+    <section id="landing">
+        <!-- <div id = circle-cont><span id = "circle-cont2"><span id="circle1"></span></span></div> -->
+        <div id="landing-main">
+            <a href="#"></a>
+            <h1>Hi, I'm Peter O'Boyle!</h1>
+            <p>I'm a Web Developer</p>
+            <p>Focused on bringing the best user experience possible</p>
+        </div>      
+        <div class="bot-mid-button bot-btn-anim">
+            <a class="landing-button" href="#about" onmouseover="showArrow()" onmouseout="removeArrow()">About</a>
+        <!-- onload="createArrows(arrow1)" -->
+            <div  class="arrow">
+                <span class="arrowspan"></span>
+           </div>
+           <!-- <div class="arrow"></div> -->
+        </div>    
+    </section>
+
+    <section id="about">
+        <div id=about-bg></div>
+        <div id = "about-title">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit,  eos quas saepe laudantium commo</p>
+        </div>
+        
+        <section >
+            <div class="left-panel about-panel">
+            <!-- <a class="fas fa-expand"></a> -->
+            <a class="fas fa-compress  about-icon"></a>
+            <h3>Responsive</h3>
+            <p>Built for responsivity across all devices.</p>
+            <!-- <div></div> -->
+            </div>
+            
+            <div class="right-panel about-panel">
+                <!-- <div></div> -->
+                <h3>Current</h3>
+                <p>Using up to date technology</p>
+                <a class="fas fa-laptop-code tech-icon"></a>
+                <!-- <a class="fas fa-clipboard-check"></a> -->
+                <!-- <a class="fas fa-robot"></a> -->
+            </div>
+
+            <div class="left-panel about-panel">
+                <a class="far fa-lightbulb  about-icon"></a>
+                <!-- <a class="fas fa-check-square"></a> -->
+                <!-- <a class="far fa-check-square"></a> -->
+                <!-- <a class="fas fa-child"></a> -->
+                <!-- <a class="far fa-smile"></a> -->
+                <h3>Intuitive</h3>
+                <p>Websites that are easy to use</p>
+                <!-- <div></div> -->
+            </div>
+
+            <div class="right-panel about-panel">
+                <!-- <div></div> -->
+                <h3>Accessible</h3>
+                <p>Inclusive of all users</p>
+                <a class="fas fa-low-vision about-icon"></a>
+            </div>
+        </section>    
+    </section>
+
+    <section id="skills">
+        <section>
+            
+            <ul id = "languages">
+                <h2>Languages</h2>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Sass</li>
+                <li>Javascript</li>
+            </ul>
+
+            <ul id = "dev-tools">
+                <h2>Tools</h2>
+                <li>Git</li>
+                <li>Jest</li>
+                <li>Enzyme</li>
+                <li>Yarn</li>
+                <li>Bootstrap</li>
+                <li>React</li>
+                <li>Firebase</li>
+                <li>@reach/router</li>
+                <li>Postman</li>
+            </ul>
+
+            <ul id = "other-skills">
+                <h2>Skills</h2>
+                <li>Object oriented programming</li>
+                <li>Agile software development</li>
+                <li>Unit testing</li>
+                <li>Authentication/Authorisation</li>
+                <li>Source control</li>
+                <li>Rest API</li>
+            </ul>
+            
+            </div>
+        </section>    
+    </section>
+
+    <section id="portfolio">
+        <iframe src="./404.html" frameborder="0"></iframe>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+    </section>
+</body>
+<!-- <script src="main.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+</html>
