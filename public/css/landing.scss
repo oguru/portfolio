@@ -1,0 +1,140 @@
+@import "./animation.scss";
+
+@mixin landing {
+    #landing {
+        background-image: url("../images/mesa-de-trabajo-3.png");
+        // background-color: black;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+        text-align: center;
+      
+        #landing-main {
+          @include flex-column;
+          height: 70vh;
+          width: 80vw;
+          color: white;
+          // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/landing2.jpg);
+          background-size: cover;
+          background-attachment: fixed;
+          background-position: center;
+          margin: 0 auto;
+      
+          h1 {
+            margin: $base-spacing * 4 0;
+            font-size: 2em;
+          }
+      
+          p {
+            font-size: 1.2em;
+            padding: $base-spacing * 4 $base-spacing * 2;
+          }
+          a {
+            @include links;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            padding: 0;
+            margin: 15px auto;
+          }
+        }
+        
+        @include bot-btn-anim;
+      
+        .bot-mid-button {
+          margin-top: $base-spacing * 4;
+          font-size: 20px;
+          border-radius: $border-radius;
+          padding: $base-spacing;
+          margin: 0 auto $base-spacing * 5 auto;
+          margin-top: $base-spacing * 2;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          height: 10vh;
+          width: 350px;
+          padding-bottom: $base-spacing * 5;
+      
+      
+          .landing-button {
+            @include links;
+            z-index: 1;
+            color: white;
+            // background-color: $primary-1-darker;
+            box-shadow: 0 0 0 2px white;
+            border-radius: $border-radius;
+            transition: 0.5s;
+            padding: $base-spacing * 2;
+            margin: 0 0 $base-spacing * 5 0;
+            // margin: 10vw auto 0 auto;
+      
+            &:hover {
+              color: $primary-1;
+              background: $brighter;
+              box-shadow: 0 0 0 0 ;
+            }
+          }
+        }
+      
+        .arrow{
+          margin: 0 auto;
+          padding: 0;
+      
+          .borderClass {
+            border-bottom: 4px solid #06A8FF;
+            border-right: 4px solid #06A8FF;
+            animation: arrow 2s infinite;
+      
+            @include arrow-animation
+        }
+      
+          span{
+              transition: 1s;
+              display: block;
+              width: 25px;
+              height: 25px;
+              margin: -15px;
+          }
+        }
+    }
+
+    
+@media only screen and (min-width: 768px) {
+
+  #landing {
+    #landing-main {
+      h1 {
+        @include h1;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  #landing {
+    #landing-main {
+      h1 {
+        @include h1;
+        font-size: 3em;
+      }
+
+      p {
+        font-size: 2em;
+      }
+
+      a {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+}

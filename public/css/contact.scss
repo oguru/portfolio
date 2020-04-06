@@ -1,0 +1,18 @@
+@mixin contact {    
+    #contact {
+        width: 30vw;
+        height: 30vh;
+        background-color: $dark-bg;
+        position: fixed;
+        display: block;
+        top: 35vh;
+        left: 35vw;
+        margin: auto;
+        z-index: -2;
+        opacity: 0;
+    
+        h2 {
+        color: white;
+        }
+    }
+}

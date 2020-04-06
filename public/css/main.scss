@@ -1,0 +1,47 @@
+@import "./palette.scss";
+@import "./variables.scss";
+@import "./animation.scss";
+@import "./nav.scss";
+@import "./landing.scss";
+@import "./about.scss";
+@import "./contact.scss";
+@import "./nav-lines.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Raleway, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+}
+@include nav-lines;
+@include nav-button-anim;
+@include nav;
+
+@include landing;
+
+@include circles;
+
+@include about;
+
+@include contact;
