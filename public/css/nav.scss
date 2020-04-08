@@ -10,13 +10,11 @@
     flex-direction: column;
     z-index: 99;
     align-items: center;
-    background-color: $dark-bg-primary;
     // mix-blend-mode: difference;
     opacity: 0.5;
 
     &:hover {
       opacity: 1;
-      background-color: $dark-bg-secondary;
       // mix-blend-mode: normal;
       // border: 20px solid #01929F;
       // border-radius: 10px;
@@ -40,7 +38,6 @@
       position: relative;
       // margin: 0 $base-spacing * 2;
       height: 40px;
-      transition: 0.5s;
 
       &:hover {
         color: $primary-1;
@@ -49,22 +46,35 @@
   }
 
   nav {
-    clip-path: ellipse(25% 100% at 50% 1%);
     top: -50px;
     height: 70px;
     width: 100vw;
+    clip-path: ellipse(60% 100% at 50% 1%);
     justify-content: space-around;
-    transition: 1s;
+    @include nav-animation;
+    background-color: $dark-bg-primary;
 
     &:hover {
       height: 100vh;
-      padding: 20vh 0;
+      padding: 15vh 0;
       top: 0;
       clip-path: ellipse(100% 100% at 50% 20%);
+      background-color: $dark-bg-secondary;
+    }
+
+    .nav-span {
+      color: $brighter;
+      font-size: 20px;
+      margin: $base-spacing * 4 0;
+      position: relative;
+      bottom: 150px;
+      @include nav-animation;
     }
 
     a {
       bottom: 150px;
+      @include nav-animation;
+
     }
 
     .bottom-zero {
@@ -76,18 +86,9 @@
   }
 
   #botnav-button {
-    clip-path: ellipse(15% 100% at 50% 100%);
-    height: 55px;
-    width: 100vw;
-    border: none;
-    bottom: -40px;
-    justify-content: center;
-    transition: 0.5s;
+    display: none;
 
-    &:hover {
-      bottom: -20px;
-      clip-path: ellipse(20% 100% at 50% 100%);
-    }
+
 
     #top-txt {
       position: relative;
@@ -99,25 +100,32 @@
       }
 
     }
+    @include nav-lines-bot;
+
   }
 
-  @include nav-lines-bot;
 
 
   @media only screen and (min-width: 768px) {
 
     nav,
     #botnav-button {
+      display: flex;
       opacity: 1;
       flex-direction: row;
       justify-content: center;
+      background-color: $dark-bg-primary;
+      transition: 0.5s;
+
+      &:hover {
+      background-color: $dark-bg-secondary;
+      }
     }
 
     nav {
       clip-path: ellipse(100% 100% at 50% 1%);
       top: -50px;
       height: 70px;
-      transition: 0.5s;
 
       &:hover {
         top: 0;
@@ -126,25 +134,44 @@
         padding: 0;
       }
 
+      .nav-span {
+        display: none;
+      }
+
       a {
         bottom: 50px;
         margin-bottom: 10px;
+        transition: 0.5s;
       }
     }
 
     #botnav-button {
       clip-path: ellipse(8% 100% at 50% 100%);
+      height: 55px;
+      width: 100vw;
+      border: none;
+      bottom: -40px;
+      justify-content: center;
+      display: flex;
 
       &:hover {
-        bottom: -18px;
+        bottom: -20px;
+        clip-path: ellipse(20% 100% at 50% 100%);
+
       }
 
       #top-txt {
+      transition: 0.5s;
+
         &.move-bot-nav-txt {
           bottom: 3px;
         }
       }
+
+
     }
+
+
   }
 
   @media only screen and (min-width: 1024px) {

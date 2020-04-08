@@ -16,10 +16,12 @@
 <body>
 
     <nav id="nav-btn-anim" onmouseover="moveNav()" onmouseout="returnNav()">
+        <span id="mob-top-btn" class="nav-text nav-span fas fa-home" href="#blog" onclick="returnToTop()"></span>
         <a class="nav-text" href="#about">About</a>
         <a class="nav-text" href="#projects">Projects</a>
         <a class="nav-text" href="#blog">Blog</a>
         <a class="nav-text" id="contact-button" onclick="myFunction()">Contact</a>
+        <span id="mob-close-nav" class="nav-text nav-span fas fa-times" onclick="returnNav()"></span>
         <div id="nav-icon">
             <span id="nav-line-1" class="nav-line"></span>
             <span id="nav-line-2" class="nav-line"></span>
@@ -28,7 +30,7 @@
     </nav>
 
     <button id="botnav-button" onmouseover="moveBotNav()" onmouseout="returnBotNav()">
-        <span id="top-txt" href="#landing">Top</span>
+        <span id="top-txt" href="#landing" onclick="returnToTop()">Top</span>
         <div id="go-to-top-icon">
             <span id="nav-line-4" class="nav-line"></span>
             <span id="nav-line-5" class="nav-line"></span>

@@ -1,3 +1,5 @@
+@import "./animation.scss";
+
 @mixin nav-lines {    
     #nav-icon,
     #go-to-top-icon {
@@ -42,7 +44,8 @@
 
     #nav-icon {
         height: 10px;
-        transition: 1s;
+        @include nav-animation;
+        
         .navLineAnimate
         {
         width: 0;
@@ -66,24 +69,24 @@
 
 @mixin nav-lines-bot {    
     #go-to-top-icon {
-        bottom: 2px;
-        height: 9px;
-        // justify-content: space-around;
-
-        &.moveGoToTopIcon {
-            bottom: 20px;
-        }
-    }
-
-    #go-to-top-icon .navLineAnimate {
-        width: 0;
+        display: none;
     }
 
     @media only screen and (min-width: 768px) {   
         #go-to-top-icon {
+            display: flex;
+            width: 100vw;
+            bottom: 2px;
+            height: 9px;    
+            justify-content: space-around;
+
             &.moveGoToTopIcon {
-                bottom: 30px;
+                bottom: 25px;
             }
+        }
+
+        #go-to-top-icon .navLineAnimate {
+            width: 0;
         }
     }
 }
