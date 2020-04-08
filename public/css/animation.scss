@@ -4,15 +4,17 @@
 @mixin rotation {
 	@keyframes rotation {
 		from {
-		  transform: rotate(0deg);
+			transform: rotate(0deg);
 		}
+
 		to {
-		  transform: rotate(359deg);
+			transform: rotate(359deg);
 		}
-	  }
+	}
 }
 
 @mixin nav-button-anim {
+
 	#nav-btn-anim a::before,
 	#nav-btn-anim a::after {
 		position: absolute;
@@ -26,7 +28,7 @@
 	}
 
 	#nav-btn-anim a::after {
-			opacity: 1;
+		opacity: 1;
 	}
 
 	#nav-btn-anim a::before {
@@ -68,12 +70,12 @@
 }
 
 @mixin bot-btn-anim {
-	
+
 	.bot-btn-anim a::before,
 	.bot-btn-anim a::after {
-	display: inline-block;
-	opacity: 0;
-	transition: transform 0.3s, opacity 0.2s;
+		display: inline-block;
+		opacity: 0;
+		transition: transform 0.3s, opacity 0.2s;
 	}
 
 	.bot-btn-anim a::before {
@@ -106,67 +108,78 @@
 		height: 100vh;
 		margin: auto;
 		@include rotation;
-	  
+
 		#circle1 {
-		  width: 300px;
-		  height: 300px;
-		  border-top: white 2px solid;
-		  border-radius: 100%;
-		  margin: auto;
-		  position: absolute;
-		  animation: rotation 3s infinite linear;
-		  animation-direction: reverse;
+			width: 300px;
+			height: 300px;
+			border-top: white 2px solid;
+			border-radius: 100%;
+			margin: auto;
+			position: absolute;
+			animation: rotation 3s infinite linear;
+			animation-direction: reverse;
 		}
-	  
+
 		#circle2 {
-		  width: 30vw;
-		  height: 30vw;
-		  border-top: white 2px solid;
-		  border-radius: 100%;
-		  margin: auto;
-		  position: absolute;
-		  animation: rotation 6s infinite linear;
+			width: 30vw;
+			height: 30vw;
+			border-top: white 2px solid;
+			border-radius: 100%;
+			margin: auto;
+			position: absolute;
+			animation: rotation 6s infinite linear;
 		}
-	  
+
 		#circle3 {
-		  width: 65vw;
-		  height: 65vw;
-		  border-top: white 2px solid;
-		  border-radius: 100%;
-		  margin: auto;
-		  position: absolute;
-		  animation: rotation 10s infinite linear;
-		  animation-direction: reverse;
+			width: 65vw;
+			height: 65vw;
+			border-top: white 2px solid;
+			border-radius: 100%;
+			margin: auto;
+			position: absolute;
+			animation: rotation 10s infinite linear;
+			animation-direction: reverse;
 		}
-	  
+
 		#circle4 {
-		  width: 85vw;
-		  height: 85vw;
-		  border-top: white 2px solid;
-		  border-radius: 100%;
-		  margin: auto;
-		  position: absolute;
-		  animation: rotation 15s infinite linear;
-		  background-color: none;
+			width: 85vw;
+			height: 85vw;
+			border-top: white 2px solid;
+			border-radius: 100%;
+			margin: auto;
+			position: absolute;
+			animation: rotation 15s infinite linear;
+			background-color: none;
 		}
-	}	  
+	}
 }
 
 @mixin arrow-animation {
 	@keyframes arrow {
-        0%{
-            opacity: 0;
-            transform: rotate(45deg) translate(-15px,-15px);
-        }
-        50%{
-            opacity: 1;
-        }
-        100%{
-        //   border-color: $primary-1-darker;
-            opacity: 0;
-            transform: rotate(45deg) translate(0px,0px);
-        }
-    }  	
+		0% {
+			opacity: 0;
+			transform: rotate(45deg) translate(-15px, -15px);
+		}
+
+		50% {
+			opacity: 1;
+		}
+
+		100% {
+			//   border-color: $primary-1-darker;
+			opacity: 0;
+			transform: rotate(45deg) translate(0px, 0px);
+		}
+	}
+}
+
+@mixin show-hidden-anim {
+	@keyframes show-hidden-anim {
+		0% {
+
+			opacity: 0;
+		}
+	}
 }
 
 
@@ -190,36 +203,35 @@
 
 
 
-      
-        // #circle-cont {
-        //   position: absolute;
-        //   @include flex-column;
-        //   width: 100vw;
-        //   height: 90vh;
-        //   margin: auto;
-      
-        //   #circle-cont2 {
-        //     position: absolute;
-        //     width: 55vw;
-        //     height: 55vw;
-        //     // position: absolute;
-        //     animation: rotation 50s infinite linear;
-        //     animation-direction: reverse;
-      
-        //     #circle1 {
-        //       position: absolute;
-        //       margin: auto;
-        //       // margin-right: 15vh;
-        //       // margin-bottom: 15vh;
-        //       // top: 50vh;
-        //       // left: 35vw;
-        //       width: 15vh;
-        //       height: 15vh;
-        //       background-image: url(./images/circle-vector.png);
-        //       background-size: cover;
-        //       background-repeat: no-repeat;
-        //       animation: rotation 30s infinite linear;
-        //       animation-direction: normal;
-        //     }
-        //   }
-        // }
+// #circle-cont {
+//   position: absolute;
+//   @include flex-column;
+//   width: 100vw;
+//   height: 90vh;
+//   margin: auto;
+
+//   #circle-cont2 {
+//     position: absolute;
+//     width: 55vw;
+//     height: 55vw;
+//     // position: absolute;
+//     animation: rotation 50s infinite linear;
+//     animation-direction: reverse;
+
+//     #circle1 {
+//       position: absolute;
+//       margin: auto;
+//       // margin-right: 15vh;
+//       // margin-bottom: 15vh;
+//       // top: 50vh;
+//       // left: 35vw;
+//       width: 15vh;
+//       height: 15vh;
+//       background-image: url(./images/circle-vector.png);
+//       background-size: cover;
+//       background-repeat: no-repeat;
+//       animation: rotation 30s infinite linear;
+//       animation-direction: normal;
+//     }
+//   }
+// }

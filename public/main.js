@@ -1,12 +1,5 @@
 // const getArrows = document.getElementsByClassName("arrow");
 
-const changeOOP = () => {
-   document.getElementById("oop").innerHTML = "Object oriented programming"
-}
-
-screen.width > 374 ? changeOOP() : null;
-
-
 // class Arrow {
 // constructor(id) {
 //    this.arrows = [       

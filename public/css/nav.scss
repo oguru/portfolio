@@ -1,164 +1,179 @@
 @import "./nav-lines.scss";
+@import "./palette.scss";
 
-@mixin nav {   
-    nav, #botnav-button {
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        z-index: 99;
-        align-items: center;
-        background-color: rgb(5, 39, 56);
-        opacity: 0.3;
+@mixin nav {
 
-        &:hover {
-          opacity: 1;
-          background-color: rgb(27, 61, 77);
-          // border: 20px solid #01929F;
-          // border-radius: 10px;
-        }
+  nav,
+  #botnav-button {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    align-items: center;
+    background-color: $dark-bg-primary;
+    // mix-blend-mode: difference;
+    opacity: 0.5;
 
-        a, #top-txt {
-          // @include links;
-              padding: $base-spacing;
-              font-size: 25px;
-              color: white;
-              text-decoration: none;
-              width: 120px;
-              text-align: center; 
-              position: relative;
-              // margin: 0 $base-spacing * 2;
-              height: 40px;
-              transition: 0.5s;
+    &:hover {
+      opacity: 1;
+      background-color: $dark-bg-secondary;
+      // mix-blend-mode: normal;
+      // border: 20px solid #01929F;
+      // border-radius: 10px;
+    }
+
+    // @keyframes nav-animation {
+
+    //   0% {} 
       
-              &:hover {
-                  color: $primary-1;
-              }
-          }
+    // }
+
+    a,
+    #top-txt {
+      // @include links;
+      padding: $base-spacing;
+      font-size: 25px;
+      color: white;
+      text-decoration: none;
+      width: 120px;
+      text-align: center;
+      position: relative;
+      // margin: 0 $base-spacing * 2;
+      height: 40px;
+      transition: 0.5s;
+
+      &:hover {
+        color: $primary-1;
+      }
+    }
+  }
+
+  nav {
+    clip-path: ellipse(25% 100% at 50% 1%);
+    top: -50px;
+    height: 70px;
+    width: 100vw;
+    justify-content: space-around;
+    transition: 1s;
+
+    &:hover {
+      height: 100vh;
+      padding: 20vh 0;
+      top: 0;
+      clip-path: ellipse(100% 100% at 50% 20%);
+    }
+
+    a {
+      bottom: 150px;
+    }
+
+    .bottom-zero {
+      bottom: 0;
+    }
+
+    @include nav-lines-top;
+
+  }
+
+  #botnav-button {
+    clip-path: ellipse(15% 100% at 50% 100%);
+    height: 55px;
+    width: 100vw;
+    border: none;
+    bottom: -40px;
+    justify-content: center;
+    transition: 0.5s;
+
+    &:hover {
+      bottom: -20px;
+      clip-path: ellipse(20% 100% at 50% 100%);
+    }
+
+    #top-txt {
+      position: relative;
+      bottom: -20px;
+      font-size: 20px;
+
+      &.move-bot-nav-txt {
+        bottom: 5px;
+      }
+
+    }
+  }
+
+  @include nav-lines-bot;
+
+
+  @media only screen and (min-width: 768px) {
+
+    nav,
+    #botnav-button {
+      opacity: 1;
+      flex-direction: row;
+      justify-content: center;
     }
 
     nav {
-        clip-path: ellipse(25% 100% at 50% 1%);
-        top: -50px;
+      clip-path: ellipse(100% 100% at 50% 1%);
+      top: -50px;
+      height: 70px;
+      transition: 0.5s;
+
+      &:hover {
+        top: 0;
+        clip-path: ellipse(100% 100% at 50% 1%);
         height: 70px;
-        width: 100vw;
-        justify-content: space-around;
-        transition: 1s;
-    
-        &:hover {
-          height: 100vh;
-          padding: 20vh 0;
-          top: 0;
-          clip-path: ellipse(100% 100% at 50% 20%);
-        }
-        
-        a {
-          bottom: 150px;
-        }
-    
-        .bottom-zero {
-            bottom: 0;
-        }
-    
-        @include nav-lines-top;
-    
+        padding: 0;
+      }
+
+      a {
+        bottom: 50px;
+        margin-bottom: 10px;
+      }
     }
 
     #botnav-button {
-        clip-path: ellipse(15% 100% at 50% 100%);
-        height: 55px;
-        width: 100vw;
-        border: none;
-        bottom: -40px;
-        justify-content: center;
-        transition: 0.5s;
-        
-        &:hover {
-            bottom: -20px;
-            clip-path: ellipse(20% 100% at 50% 100%);
-        }
+      clip-path: ellipse(8% 100% at 50% 100%);
 
-        #top-txt {
-          position: relative;
-          bottom: -20px;
-          font-size: 20px;
+      &:hover {
+        bottom: -18px;
+      }
 
-          &.move-bot-nav-txt {
-            bottom: 5px;
-          }
-  
+      #top-txt {
+        &.move-bot-nav-txt {
+          bottom: 3px;
         }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+
+    nav {
+      clip-path: ellipse(45% 100% at 50% 1%);
+
+      &:hover {
+        top: 0px;
+      }
+
+      a {
+        margin-bottom: $base-spacing * 0.5;
+        width: 120px;
+        font-size: 25px;
+      }
     }
 
-    @include nav-lines-bot;
-
-
-    @media only screen and (min-width: 768px) {   
-
-      nav, #botnav-button {
-        opacity: 1;
-        flex-direction: row;
-        justify-content: center;
-      }
-      
-      nav {
-          clip-path: ellipse(100% 100% at 50% 1%);
-          top: -50px;
-          height: 70px;
-          transition: 0.5s;
-  
-          &:hover {
-            top: 0;
-            clip-path: ellipse(100% 100% at 50% 1%);
-            height: 70px;
-            padding: 0;
-          }
-      
-          a {
-            bottom: 50px;
-            margin-bottom: 10px;
-          }
-        }
-
-        #botnav-button {
-          clip-path: ellipse(8% 100% at 50% 100%);
-          &:hover {
-            bottom: -18px;
-          }
-
-          #top-txt { 
-            &.move-bot-nav-txt {
-            bottom: 3px;
-            }
-          }
-        }  
+    #botnav-button {
+      clip-path: ellipse(5% 100% at 50% 100%);
     }
-    
-    @media only screen and (min-width: 1024px) {
+  }
 
-        nav {
-          clip-path: ellipse(45% 100% at 50% 1%);
-      
-          &:hover {
-            top: 0px;
-          }
-          a {
-            margin-bottom: $base-spacing * 0.5;
-            width: 120px;
-            font-size: 25px;
-          }
-        }
-
-        #botnav-button {
-          clip-path: ellipse(5% 100% at 50% 100%);
-        }  
+  @media only screen and (min-width: 1440px) {
+    nav {
+      a {
+        width: 150px;
+        font-size: 30px;
       }
-    
-    @media only screen and (min-width: 1440px) {
-        nav {
-            a {
-            width: 150px;
-            font-size: 30px;
-            }
-        }
-    }      
-}  
+    }
+  }
+}

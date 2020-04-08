@@ -54,6 +54,10 @@
     }
 
     @media only screen and (min-width: 768px) {   
+        #nav-icon {
+            transition: 0.5s;
+        }
+        
         .moveNavIcon  {
             top: 55px;
         }
