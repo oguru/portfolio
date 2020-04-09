@@ -49,7 +49,7 @@
 	#nav-btn-anim a:hover::after,
 	#nav-btn-anim a:focus::before,
 	#nav-btn-anim a:focus::after {
-		background: $brighter;
+		background: $secondary;
 		width: 20px;
 
 	}
@@ -166,7 +166,6 @@
 		}
 
 		100% {
-			//   border-color: $primary-1-darker;
 			opacity: 0;
 			transform: rotate(45deg) translate(0px, 0px);
 		}

@@ -40,9 +40,17 @@
       height: 40px;
 
       &:hover {
-        color: $primary-1;
+        color: $primary;
       }
     }
+  }
+
+  .nav-hover:hover {
+      height: 100vh;
+      padding: 15vh 0;
+      top: 0;
+      clip-path: ellipse(100% 100% at 50% 20%);
+      background-color: $primary-bg;
   }
 
   nav {
@@ -52,18 +60,14 @@
     clip-path: ellipse(60% 100% at 50% 1%);
     justify-content: space-around;
     @include nav-animation;
-    background-color: $dark-bg-primary;
+    background-color: $primary-bg-darker;
 
-    &:hover {
-      height: 100vh;
-      padding: 15vh 0;
-      top: 0;
-      clip-path: ellipse(100% 100% at 50% 20%);
-      background-color: $dark-bg-secondary;
+    .ignore-mouse {
+      pointer-events: none;
     }
 
     .nav-span {
-      color: $brighter;
+      color: $secondary;
       font-size: 20px;
       margin: $base-spacing * 4 0;
       position: relative;
@@ -114,11 +118,11 @@
       opacity: 1;
       flex-direction: row;
       justify-content: center;
-      background-color: $dark-bg-primary;
+      background-color: $primary-bg-darker;
       transition: 0.5s;
 
       &:hover {
-      background-color: $dark-bg-secondary;
+      background-color: $primary-bg;
       }
     }
 
@@ -126,13 +130,6 @@
       clip-path: ellipse(100% 100% at 50% 1%);
       top: -50px;
       height: 70px;
-
-      &:hover {
-        top: 0;
-        clip-path: ellipse(100% 100% at 50% 1%);
-        height: 70px;
-        padding: 0;
-      }
 
       .nav-span {
         display: none;
@@ -143,6 +140,13 @@
         margin-bottom: 10px;
         transition: 0.5s;
       }
+    }
+
+    .nav-hover:hover {
+        top: 0;
+        clip-path: ellipse(100% 100% at 50% 1%);
+        height: 70px;
+        padding: 0;
     }
 
     #botnav-button {
@@ -199,7 +203,7 @@
     nav {
       a {
         width: 150px;
-        font-size: 30px;
+        font-size: 25px;
       }
     }
   }

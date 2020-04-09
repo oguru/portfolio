@@ -61,6 +61,19 @@ removeArrow = () => {
    // arrows[5].classList.remove("borderClass");
 }
 
+const navBar = document.querySelector("#nav-btn-anim");
+
+const closeNav = () => {
+   navBar.classList.remove("nav-hover")
+   setTimeout(() => navBar.classList.add("nav-hover")
+      , 1000);
+}
+
+const returnToTop = () => {
+   window.scrollTo(0, 0)
+   closeNav();
+}
+
 const navIcon = document.querySelector("#nav-icon");
 const navLines = document.querySelectorAll(".nav-line");
 const navText = document.querySelectorAll(".nav-text");
@@ -102,7 +115,7 @@ const moveBotNav = () => {
    }
 
    botNavText.classList.add("move-bot-nav-txt");
- }
+}
 
 const returnBotNav = () => {
    goToTopIcon.classList.remove("moveGoToTopIcon");
@@ -134,17 +147,17 @@ const returnBotNav = () => {
 // const gambitGalleryIsInView = el => {
 // 	const scroll = window.scrollY || window.pageYOffset
 // 	const boundsTop = el.getBoundingClientRect().top + scroll
-	
+
 // 	const viewport = {
 // 		top: scroll,
 // 		bottom: scroll + window.innerHeight,
 // 	}
-	
+
 //     const bounds = {
 // 		top: boundsTop,
 // 		bottom: boundsTop + el.clientHeight,
 // 	}
-	
+
 // 	return ( bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom ) 
 // 		|| ( bounds.top <= viewport.bottom && bounds.top >= viewport.top );
 // }
@@ -154,11 +167,11 @@ const returnBotNav = () => {
 // document.addEventListener( 'DOMContentLoaded', () => {
 // 	const topPoint = document.querySelector( '.left-panel' )
 // 	const about = document.querySelector( '.bot-mid-button' )
-	
+
 // 	const handler = () => raf( () => {
 // 		about.innerHTML = 'Is the div visible? ' + ( gambitGalleryIsInView( topPoint ) ? 'Yes' : 'No' )
 // 	} )
-	
+
 // 	handler()
 // 	window.addEventListener( 'scroll', handler )
 // } )

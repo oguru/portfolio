@@ -12,7 +12,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: $light;
+      background-color: $light-bg;
     }
 
     * {
@@ -67,7 +67,7 @@
       width: 100%;
 
       a {
-        background-color: $primary-1;
+        background-color: $primary;
         text-align: center;
         width: 70px;
         height: 70px;
@@ -210,9 +210,9 @@
       height: 30vh;
       border-top-right-radius: 35%;
       border-bottom-right-radius: 35%;
-      border-top: 4px $brighter solid;
-      border-right: 3.5px $brighter solid;
-      border-bottom: 4px $brighter solid;
+      border-top: 4px $secondary solid;
+      border-right: 3.5px $secondary solid;
+      border-bottom: 4px $secondary solid;
       background-color: #007e8a;
 
       #language-text-flex {
@@ -235,9 +235,9 @@
       position: relative;
       left: 10vw;
       border-radius: 35% 0 0 35%;
-      border-left: 3.5px $brighter solid;
-      border-top: 4px $brighter solid;
-      border-bottom: 4px $brighter solid;
+      border-left: 3.5px $secondary solid;
+      border-top: 4px $secondary solid;
+      border-bottom: 4px $secondary solid;
       padding-left: 10vw;
       background-color: #01626B;
 
@@ -266,9 +266,9 @@
       height: 30vh;
       border-top-right-radius: 35%;
       border-bottom-right-radius: 35%;
-      border-top: 4px $brighter solid;
-      border-right: 3.5px $brighter solid;
-      border-bottom: 4px $brighter solid;
+      border-top: 4px $secondary solid;
+      border-right: 3.5px $secondary solid;
+      border-bottom: 4px $secondary solid;
       background-color: #02454b;
 
 
