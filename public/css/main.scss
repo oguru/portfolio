@@ -6,6 +6,7 @@
 @import "./about.scss";
 @import "./contact.scss";
 @import "./nav-lines.scss";
+@import "./projects.scss";
 
 * {
   margin: 0;
@@ -32,8 +33,10 @@ html {
 }
 
 section {
+  width: 100vw;
   height: 100vh;
 }
+
 @include nav-lines;
 @include nav-button-anim;
 @include nav;
@@ -43,5 +46,7 @@ section {
 @include circles;
 
 @include about;
+
+@include projects;
 
 @include contact;

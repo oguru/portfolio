@@ -1,0 +1,188 @@
+@import "./variables.scss";
+
+@mixin projects {
+  #projects {
+    text-align: center;
+
+    h2 {
+      padding: $base-spacing * 4;
+      text-shadow: 0px 1px 4px rgba(0,0,0,0.43);          
+
+    }
+    #projects-group {   
+      @include flex-column;
+
+      .project-parent {
+        position: relative;
+        border-radius: $border-radius;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        text-align: center;
+        bottom: 0;
+        right: 0;
+        box-shadow: 5px 5px 7px -1px #6F6F6F;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          bottom: 4px;
+          right: 4px;
+          box-shadow: 6px 6px 6px 2px #606060;
+
+        }
+
+        .project-content {
+          border-radius: $border-radius;
+          z-index: 10;
+          // position: absolute;
+          // padding: $base-spacing * 3;
+          @include flex-column;
+          justify-content: space-between;
+          overflow: hidden;
+          height: 300px;
+          width: 300px;
+          opacity: 1;
+
+          p, a, h3 {
+            text-shadow: 0px 1px 4px rgba(0,0,0,0.63);          
+          }
+
+          .project-bg-overlay {
+            border-radius: $border-radius;
+
+            width: 300px;
+            height: 300px;
+            // background-color: $primary-bg;
+            background: linear-gradient(150deg, rgb(1, 105, 114) 0%, rgb(3, 33, 48) 80%);
+            position: absolute;
+            z-index: 9;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s ease-in-out;
+          }
+
+          &:hover .project-bg-overlay {
+            opacity: 0.8;
+          }
+          
+          img {
+            z-index: -10;
+            transition: 0.3s ease-in-out;
+            overflow: hidden;
+            object-fit: cover;
+            max-width: 100%;
+            // height: 100%;
+            // width: 300px;
+            height: 300px;
+            filter: blur(0px);
+          }
+
+          &:hover img {
+            transform: scale(1.2);
+            filter: blur(1px);  
+          }
+
+          .project-info {
+            z-index: 100;
+            position: absolute;
+            @include flex-column;
+            justify-content: space-between;
+            // padding: 0 $base-spacing * 2;
+            width: 300px;
+            height: 300px;
+            // opacity: 0;
+            // transition: 1s ease-in-out;
+
+            // &:hover {
+            //   opacity: 1;
+            // }
+
+            .proj-title-desc {
+              position: relative;
+              padding-top: $base-spacing * 6;
+              height: 125px;
+              transition: all 0.3s ease-in-out 0.1s;
+              bottom: 130px;
+              // @include flex-column;
+
+              h3 {
+                color: $secondary;
+                font-size: 25px;
+                padding-bottom: $base-spacing * 3;
+              }
+
+              p {
+                color: white;
+                width: 240px;
+              }
+            }
+
+            &:hover .proj-title-desc {
+              bottom: 0;
+              // h3 {
+                
+              //   // border: red 10px solid;
+              // }              
+            }
+
+            .concepts-flex {
+              @include flex-column;
+              width: 240px;
+              justify-content: flex-end;
+              height: 125px;
+              padding-bottom: $base-spacing * 4;
+              list-style: none;
+              color: white;
+              transition-delay: 0.6s;
+              transition: all 0.3s ease-in-out 0.1s;
+              position: relative;
+              top: 130px;
+
+              p {
+                padding-bottom: $base-spacing / 2;
+              }
+            }
+
+            &:hover .concepts-flex {
+              top: 0;           
+            }
+
+
+            .icons {
+              @include flex-row;
+              justify-content: space-around;
+              width: 280px;
+              height: 50px;
+
+              .code-icon {
+                right: 125px;
+              }
+
+              .folder-icon {
+                left: 125px;
+              }
+
+              a {
+                color: $secondary;
+                text-decoration: none;
+                font-size: 35px;
+                padding: 30px 5px 0 5px;
+                position: relative;
+                transition: all 0.3s ease-in-out 0.2s;
+  
+              }
+            }
+
+            &:hover .icons .code-icon {
+              right: 0;           
+            }
+
+            &:hover .icons .folder-icon {
+              left: 0;           
+            }
+          }      
+        }
+        }
+      }  
+    }
+  }
