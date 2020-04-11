@@ -127,6 +127,100 @@ const returnBotNav = () => {
    botNavText.classList.remove("move-bot-nav-txt");
 }
 
+const projects = document.querySelectorAll(".project-info");
+
+const getProjectIco = (projectId) => document.getElementById(projectId);
+const getCodeIco = (codeId) => document.getElementById(codeId);
+const getProjectBox = () => document.querySelectorAll(".project-info");
+const getProjectParent = () => document.querySelectorAll(".project-parent");
+const getProjectDesc = () => document.querySelectorAll('.proj-title-desc');
+const getProjectConc = () => document.querySelectorAll('.concepts');
+const getProjectOverlay = () => document.querySelectorAll('.project-bg-overlay');
+const getProjectContent = () => document.querySelectorAll('.project-content');
+const getProjectImg = () => document.querySelectorAll('.project-img');
+
+// const addAnimClasses = 
+
+const animateBoxOn = (codeId, projectId, index) => {
+   const codeIcon = getCodeIco(codeId);
+   const projectIcon = getProjectIco(projectId);
+   const projectBox = getProjectBox()[index];
+   const projectParent = getProjectParent()[index];
+   const projectDesc = getProjectDesc()[index];
+   const projectConc = getProjectConc()[index];
+   const projectOverlay = getProjectOverlay()[index];
+   const projectContent = getProjectContent()[index];
+   const projectImg = getProjectImg()[index];
+
+   projectBox.classList.remove("box-anim-out");
+   projectParent.classList.remove("box-anim-out");
+   projectOverlay.classList.remove("box-anim-out");
+   projectContent.classList.remove("box-anim-out");
+   projectImg.classList.remove("box-anim-out");
+   codeIcon.classList.remove("icon-anim-out");
+   projectIcon.classList.remove("icon-anim-out");
+   projectDesc.classList.remove("desc-anim-out");
+   projectConc.classList.remove("conc-anim-out");
+
+   projectBox.classList.add("box-anim-in");
+   projectParent.classList.add("box-anim-in");
+   projectOverlay.classList.add("box-anim-in");
+   projectContent.classList.add("box-anim-in");
+   projectImg.classList.add("box-anim-in");
+   codeIcon.classList.add("icon-anim-in");
+   projectIcon.classList.add("icon-anim-in");
+   projectDesc.classList.add("desc-anim-in");
+   projectConc.classList.add("conc-anim-in");
+};
+
+const animateBoxOff = (codeId, projectId, index) => {
+
+   const codeIcon = getCodeIco(codeId);
+   const projectIcon = getProjectIco(projectId);
+   const projectBox = getProjectBox()[index];
+   const projectParent = getProjectParent()[index];
+   const projectDesc = getProjectDesc()[index];
+   const projectConc = getProjectConc()[index];
+   const projectOverlay = getProjectOverlay()[index];
+   const projectContent = getProjectContent()[index];
+   const projectImg = getProjectImg()[index];
+
+   // projectBox.classList.remove("box-anim-in");
+   // projectParent.classList.remove("box-anim-in");
+   // projectOverlay.classList.remove("box-anim-in");
+   // projectContent.classList.remove("box-anim-in");
+   // projectImg.classList.remove("box-anim-in");
+   // codeIcon.classList.remove("icon-anim-in");
+   // projectIcon.classList.remove("icon-anim-in");
+   // projectDesc.classList.remove("desc-anim-in");
+   // projectConc.classList.remove("conc-anim-in");
+
+   projectBox.classList.add("box-anim-out");
+   projectParent.classList.add("box-anim-out");
+   projectOverlay.classList.add("box-anim-out");
+   projectContent.classList.add("box-anim-out");
+   projectImg.classList.add("box-anim-out");
+   codeIcon.classList.add("icon-anim-out");
+   projectIcon.classList.add("icon-anim-out");
+   projectDesc.classList.add("desc-anim-out");
+   projectConc.classList.add("conc-anim-out");
+}
+
+const spinOut = (iconName) => {
+   const hoverState = document.getElementById(iconName).childNodes;
+   hoverState[3].classList.remove("spin-out");
+   hoverState[1].classList.remove("return-ico");
+   hoverState[1].classList.add("spin-out");
+   hoverState[3].classList.add("return-ico");
+}
+
+const returnDefault = (iconName) => {
+   const defaultState = document.getElementById(iconName).childNodes;
+   defaultState[1].classList.remove("spin-out");
+   defaultState[1].classList.add("return-ico");
+   defaultState[3].classList.remove("return-ico");
+   defaultState[3].classList.add("spin-out");
+}
 
 
 

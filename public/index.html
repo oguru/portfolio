@@ -190,33 +190,89 @@
                 <div class="project-content">
                     <div class="project-bg-overlay">
                     </div>
-                    <img src="./images/vojo-2.png" alt="Vojo">
+                    <img class="project-img" src="./images/vojo-2.png" alt="Vojo">
 
-                    <div class="project-info">
+                    <div class="project-info" onmouseover="animateBoxOn('vojocode', 'vojo', 0)"
+                        onmouseout="animateBoxOff('vojocode', 'vojo', 0)">
                         <div class="proj-title-desc">
                             <h3>Vojo</h3>
                             <p>Vojo is a client project built to spec in React as part of a group.</p>
                         </div>
                         <div class="icons">
-                            <a class="fas fa-code code-icon"></a>
-                            <a class="far fa-folder-open folder-icon"
-                                href="https://vojo-bbe4f.firebaseapp.com/dashboard"></a>
+
+                            <div id="vojocode" class="icon code-link" onmouseover="spinOut('vojocode')"
+                                onmouseout="returnDefault('vojocode')">
+                                <a class="fas fa-code code-ico"></a>
+                                <a class="fab fa-github-square github-ico spin-out"></a>
+                            </div>
+
+                            <div id="vojo" class="icon project-link" onmouseover="spinOut('vojo')"
+                                onmouseout="returnDefault('vojo')">
+                                <a class="far fa-folder folder-ico"
+                                    href="https://vojo-bbe4f.firebaseapp.com/dashboard"></a>
+
+                                <a class="far fa-folder-open folder-open spin-out"></a>
+                            </div>
                         </div>
-                        <div class="concepts-flex">
+                        <div class="concepts">
                             <p> Authentication </p>
                             <p> Pair Programming </p>
                             <p> React - Database - UI/UX </p>
                         </div>
 
-                        <!-- <a class="far fa-folder"></a> -->
-                        <!-- <a class="fab fa-github-square"></a> -->
                     </div>
                 </div>
 
+            </div>
+
+
+
+
+
+            <div class="project-parent">
+                <div class="project-content">
+                    <div class="project-bg-overlay">
+                    </div>
+                    <img class="project-img" src="./images/face.jpg" alt="Halls of Madness">
+
+                    <div class="project-info" onmouseover="animateBoxOn('hallscode', 'halls', 1)"
+                        onmouseout="animateBoxOff('hallscode', 'halls', 1)">
+                        <div class="proj-title-desc">
+                            <h3>Halls of Madness</h3>
+                            <p>Extension of a tech challenge to pass functions as props and fetch from an API.</p>
+                        </div>
+                        <div id="halls-icons" class="icons">
+
+                            <div id="hallscode" class="icon code-link" onmouseover="spinOut('hallscode')"
+                                onmouseout="returnDefault('hallscode')">
+                                <a class="fas fa-code code-ico"></a>
+                                <a class="fab fa-github-square github-ico spin-out"></a>
+                            </div>
+
+                            <div id="halls" class="icon project-link" onmouseover="spinOut('halls')"
+                                onmouseout="returnDefault('halls')">
+                                <a class="far fa-folder folder-ico" href="https://hallsofmadness.peterdev.co.uk"></a>
+
+                                <a class="far fa-folder-open folder-open spin-out"></a>
+                            </div>
+                        </div>
+                        <div class="concepts">
+                            <p>API Fetch - React - UI/UX</p>
+                            <p>Functions as Props - Sound </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
+
+
+
         </div>
         <!-- <iframe src="./404.html" frameborder="0"></iframe> -->
+
+
     </section>
 
     <section id="contact">

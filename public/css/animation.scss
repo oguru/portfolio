@@ -175,19 +175,55 @@
 @mixin show-hidden-anim {
 	@keyframes show-hidden-anim {
 		0% {
-
 			opacity: 0;
 		}
 	}
 }
 
-// @mixin project-top-txt {
-// 	@keyframes project-top-txt {
-// 		0% {
-// 			top: 0;
-// 		}
-// 	}
-// }
+@mixin projects-anim {
+	.box-anim-in {
+		transition: 0.3s ease-in-out;
+	}
+	.box-anim-out {
+		transition: 0.4s ease-in-out 0.2s;
+	}
+
+	.desc-anim-in {
+		transition: all 0.25s ease-in-out 0.05s;
+	}
+	.desc-anim-out {
+		transition: all 0.2s ease-in-out 0.21s;
+	}
+
+	.conc-anim-in {
+		transition: all 0.25s ease-in-out 0.15s;
+	}
+	.conc-anim-out {
+		transition: all 0.2s ease-in-out 0.12s;
+	}
+
+	.icon-anim-in {
+		transition: all 0.25s ease-in-out 0.2s;
+	}
+	.icon-anim-out {
+		transition: all 0.18s ease-in-out 0s;
+	}
+
+	.spin-out {
+		transition: all 0.3s ease-in-out 0s;
+		filter: blur(3px);
+		transform: rotate(180deg) scale(.5);
+		opacity: 0;
+	}
+
+	.return-ico {
+		transform: rotate(0deg) scale(1);
+		transition: all 0.3s ease-in-out 0s;
+		opacity: 1;
+	}
+
+
+}
 
 
 
