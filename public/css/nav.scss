@@ -45,6 +45,12 @@
     }
   }
 
+  .nav-delay {
+    transition-delay: 0.3s;
+    transition-timing-function: ease-in;
+    transition-duration: 0.6s;
+  }
+
   .nav-hover:hover {
       height: 100vh;
       padding: 15vh 0;
@@ -54,6 +60,7 @@
   }
 
   nav {
+    z-index: 500;
     top: -50px;
     height: 70px;
     width: 100vw;
@@ -86,13 +93,10 @@
     }
 
     @include nav-lines-top;
-
   }
 
   #botnav-button {
     display: none;
-
-
 
     #top-txt {
       position: relative;

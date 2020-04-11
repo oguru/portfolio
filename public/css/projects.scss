@@ -99,8 +99,7 @@
             .proj-title-desc {
               position: relative;
               padding-top: $base-spacing * 6;
-              max-height: 125px;
-              bottom: 130px;
+              bottom: 160px;
 
               h3 {
                 color: $secondary;
@@ -110,7 +109,7 @@
 
               p {
                 color: white;
-                width: 240px;
+                width: 260px;
               }
             }
 
@@ -149,6 +148,14 @@
                 min-height: 45px;
                 position: absolute;
                 margin: auto;
+
+                .nolink {
+                  color: rgb(94, 94, 94);
+                }
+
+                .nolink-cross {
+                  color: $tertiary;
+                }
 
                 a {
                   color: $secondary;

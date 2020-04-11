@@ -62,21 +62,40 @@ removeArrow = () => {
 }
 
 const navBar = document.querySelector("#nav-btn-anim");
-
-const closeNav = () => {
-   navBar.classList.remove("nav-hover")
-   setTimeout(() => navBar.classList.add("nav-hover")
-      , 1000);
-}
-
-const returnToTop = () => {
-   window.scrollTo(0, 0)
-   closeNav();
-}
-
 const navIcon = document.querySelector("#nav-icon");
 const navLines = document.querySelectorAll(".nav-line");
 const navText = document.querySelectorAll(".nav-text");
+
+const closeNav = () => {
+   navBar.classList.remove("nav-hover");
+   navBar.classList.add("ignore-mouse");
+   setTimeout(() => {
+      navBar.classList.add("nav-hover");
+      navBar.classList.remove("ignore-mouse");
+   }, 1000);
+}
+
+const clickNavLink = (link) => {
+   closeNav();
+   setTimeout(() => {
+      window.location.assign(`https://peterdev.co.uk/${link}`);
+   }, 1000);
+}
+
+const returnToTop = () => {
+   closeNav();
+   setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }), 1000);
+}
+
+const ignorePointer = (ele, index) => {
+   ele[index].classList.add("ignore-mouse");
+   setTimeout(() => {
+      ele[index].classList.remove("ignore-mouse");
+   }, 1000);
+
+};
+
+// let navOpenCheck = false;
 
 const moveNav = () => {
 
@@ -88,11 +107,45 @@ const moveNav = () => {
 
    for (let i = 0; i < navText.length; i++) {
       navText[i].classList.add("bottom-zero");
+      // navText[i].classList.add("ignore-mouse");
    }
+
+   // const remIgnoreMouse = () => {
+   //    for (let i = 0; i < navText.length; i++) {
+   //       navText[i].classList.remove("ignore-mouse");
+   //    }
+   // }
+
+   // setTimeout(() => {
+   //    navOpenCheck = true;
+   // }, 500);
+
+   // setTimeout(() => {
+   //    if (navOpenCheck === true) {
+   //       remIgnoreMouse();
+   //    }
+   //    else {
+   //       return
+   //    }
+   // }, 500);
+
+   // console.log(navText[0].classList.contains("nav-open-check"));
+
+
+
+   // navText[0].classList.contains("nav-open-check") ? remIgnoreMouse() : null;
+
+   // setTimeout(() => {
+   //    for (let i = 0; i < navText.length; i++) {
+   //       navText[i].classList.remove("ignore-mouse");
+   //    }
+   // }, 1000);
 }
 
 const returnNav = () => {
 
+   navBar.classList.add("nav-delay");
+   navIcon.classList.add("nav-delay");
    navIcon.classList.remove("moveNavIcon");
 
    for (let i = 0; i < 3; i++) {
@@ -102,6 +155,10 @@ const returnNav = () => {
    for (let i = 0; i < navText.length; i++) {
       navText[i].classList.remove("bottom-zero");
    }
+   setTimeout(() => {
+      navBar.classList.remove("nav-delay");
+      navIcon.classList.remove("nav-delay");
+   }, 500);
 }
 
 const goToTopIcon = document.querySelector("#go-to-top-icon");
@@ -221,8 +278,6 @@ const returnDefault = (iconName) => {
    defaultState[3].classList.remove("return-ico");
    defaultState[3].classList.add("spin-out");
 }
-
-
 
 // renderArrow = () => {
 //    return (

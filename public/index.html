@@ -17,10 +17,10 @@
 
     <nav id="nav-btn-anim" class="nav-hover" onmouseover="moveNav()" onmouseout="returnNav()">
         <span id="mob-top-btn" class="nav-text nav-span fas fa-home" href="#blog" onclick="returnToTop()"></span>
-        <a class="nav-text" href="#about">About</a>
-        <a class="nav-text" href="#projects">Projects</a>
-        <a class="nav-text" href="#blog">Blog</a>
-        <a class="nav-text" id="contact-button" onclick="myFunction()">Contact</a>
+        <a onclick="clickNavLink('#about')" class="nav-text" href=>About</a>
+        <a onclick="clickNavLink('#projects')" class="nav-text">Projects</a>
+        <a onclick="clickNavLink('#blog')" class="nav-text" href="">Blog</a>
+        <a onclick="clickNavLink('contact')" class="nav-text" id="contact-button">Contact</a>
         <span id="mob-close-nav" class="nav-text nav-span fas fa-times" onclick="closeNav()"></span>
         <div id="nav-icon">
             <span id="nav-line-1" class="nav-line"></span>
@@ -191,7 +191,6 @@
                     <div class="project-bg-overlay">
                     </div>
                     <img class="project-img" src="./images/vojo-2.png" alt="Vojo">
-
                     <div class="project-info" onmouseover="animateBoxOn('vojocode', 'vojo', 0)"
                         onmouseout="animateBoxOff('vojocode', 'vojo', 0)">
                         <div class="proj-title-desc">
@@ -199,18 +198,15 @@
                             <p>Vojo is a client project built to spec in React as part of a group.</p>
                         </div>
                         <div class="icons">
-
                             <div id="vojocode" class="icon code-link" onmouseover="spinOut('vojocode')"
                                 onmouseout="returnDefault('vojocode')">
-                                <a class="fas fa-code code-ico"></a>
-                                <a class="fab fa-github-square github-ico spin-out"></a>
+                                <a class="fas fa-code code-ico nolink"></a>
+                                <a class="fas fa-times github-ico spin-out nolink-cross"></a>
                             </div>
-
                             <div id="vojo" class="icon project-link" onmouseover="spinOut('vojo')"
                                 onmouseout="returnDefault('vojo')">
-                                <a class="far fa-folder folder-ico"
-                                    href="https://vojo-bbe4f.firebaseapp.com/dashboard"></a>
-
+                                <a class="far fa-folder folder-ico" href="https://vojo-bbe4f.firebaseapp.com/dashboard"
+                                    target="_blank"></a>
                                 <a class="far fa-folder-open folder-open spin-out"></a>
                             </div>
                         </div>
@@ -219,55 +215,182 @@
                             <p> Pair Programming </p>
                             <p> React - Database - UI/UX </p>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
-
-
-
 
             <div class="project-parent">
                 <div class="project-content">
                     <div class="project-bg-overlay">
                     </div>
                     <img class="project-img" src="./images/face.jpg" alt="Halls of Madness">
-
                     <div class="project-info" onmouseover="animateBoxOn('hallscode', 'halls', 1)"
                         onmouseout="animateBoxOff('hallscode', 'halls', 1)">
                         <div class="proj-title-desc">
                             <h3>Halls of Madness</h3>
-                            <p>Extension of a tech challenge to pass functions as props and fetch from an API.</p>
+                            <p>A challenge to pass functions as props and fetch from an API. Extended to add sound and
+                                improve UI/UX.</p>
                         </div>
                         <div id="halls-icons" class="icons">
-
                             <div id="hallscode" class="icon code-link" onmouseover="spinOut('hallscode')"
                                 onmouseout="returnDefault('hallscode')">
                                 <a class="fas fa-code code-ico"></a>
-                                <a class="fab fa-github-square github-ico spin-out"></a>
+                                <a class="fab fa-github-square github-ico spin-out"
+                                    href="https://github.com/oguru/halls-of-madness" target="_blank"></a>
                             </div>
-
                             <div id="halls" class="icon project-link" onmouseover="spinOut('halls')"
                                 onmouseout="returnDefault('halls')">
-                                <a class="far fa-folder folder-ico" href="https://hallsofmadness.peterdev.co.uk"></a>
-
-                                <a class="far fa-folder-open folder-open spin-out"></a>
+                                <a class="far fa-folder folder-ico"></a>
+                                <a class="far fa-folder-open folder-open spin-out"
+                                    href="https://hallsofmadness.peterdev.co.uk" target="_blank"></a>
                             </div>
                         </div>
                         <div class="concepts">
                             <p>API Fetch - React - UI/UX</p>
                             <p>Functions as Props - Sound </p>
-                            <p> </p>
                         </div>
-
                     </div>
                 </div>
-
             </div>
 
+            <div class="project-parent">
+                <div class="project-content">
+                    <div class="project-bg-overlay">
+                    </div>
+                    <img class="project-img"
+                        src="./images/screencapture-localhost-3000-to-do-list-2020-04-10-22_24_07.png"
+                        alt="To Do List Creator">
+                    <div class="project-info" onmouseover="animateBoxOn('todocode', 'todo', 2)"
+                        onmouseout="animateBoxOff('todocode', 'todo', 2)">
+                        <div class="proj-title-desc">
+                            <h3>To Do List Creator</h3>
+                            <p>A challenge to create an app that allows you to save, read and delete to do list items
+                                from a database.</p>
+                        </div>
+                        <div id="todo-icons" class="icons">
+                            <div id="todocode" class="icon code-link" onmouseover="spinOut('todocode')"
+                                onmouseout="returnDefault('todocode')">
+                                <a class="fas fa-code code-ico"></a>
+                                <a class="fab fa-github-square github-ico spin-out"
+                                    href="https://github.com/oguru/to-do-list" target="_blank"></a>
+                            </div>
+                            <div id="todo" class="icon project-link" onmouseover="spinOut('todo')"
+                                onmouseout="returnDefault('todo')">
+                                <a class="far fa-folder folder-ico"></a>
+                                <a class="far fa-folder-open folder-open spin-out" href="https://todo.peterdev.co.uk"
+                                    target="_blank"></a>
+                            </div>
+                        </div>
+                        <div class="concepts">
+                            <p>Database - React</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="project-parent">
+                <div class="project-content">
+                    <div class="project-bg-overlay">
+                    </div>
+                    <img class="project-img"
+                        src="./images/screencapture-morsecode-peterdev-co-uk-2020-04-10-22_33_27.png"
+                        alt="Morse Code Translator">
+                    <div class="project-info" onmouseover="animateBoxOn('morsecode', 'morse', 3)"
+                        onmouseout="animateBoxOff('morsecode', 'morse', 3)">
+                        <div class="proj-title-desc">
+                            <h3>To Do List Creator</h3>
+                            <p>A challenge to make a morse code translator using array iterators. Completed
+                                with extension to translate
+                                in reverse.</p>
+                        </div>
+                        <div id="morse-icons" class="icons">
+                            <div id="morsecode" class="icon code-link" onmouseover="spinOut('morsecode')"
+                                onmouseout="returnDefault('morsecode')">
+                                <a class="fas fa-code code-ico"></a>
+                                <a class="fab fa-github-square github-ico spin-out"
+                                    href="https://github.com/oguru/morse-code-translator" target="_blank"></a>
+                            </div>
+                            <div id="morse" class="icon project-link" onmouseover="spinOut('morse')"
+                                onmouseout="returnDefault('morse')">
+                                <a class="far fa-folder folder-ico"></a>
+                                <a class="far fa-folder-open folder-open spin-out"
+                                    href="https://morsecode.peterdev.co.uk" target="_blank"></a>
+                            </div>
+                        </div>
+                        <div class="concepts">
+                            <p>Javascript - HTML - Scss</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-parent">
+                <div class="project-content">
+                    <div class="project-bg-overlay">
+                    </div>
+                    <img class="project-img"
+                        src="./images/screencapture-alieninvasion-peterdev-co-uk-2020-04-10-22_32_09.png"
+                        alt="Alien Invasion">
+                    <div class="project-info" onmouseover="animateBoxOn('alienscode', 'aliens', 4)"
+                        onmouseout="animateBoxOff('alienscode', 'aliens', 4)">
+                        <div class="proj-title-desc">
+                            <h3>Alien Invasion</h3>
+                            <p>A timed challenge using OOP to create and fire at random ships in under 150
+                                lines of code in 1 HTML file. Completed and extended for CSS and basic animation.</p>
+                        </div>
+                        <div id="aliens-icons" class="icons">
+                            <div id="alienscode" class="icon code-link" onmouseover="spinOut('alienscode')"
+                                onmouseout="returnDefault('alienscode')">
+                                <a class="fas fa-code code-ico"></a>
+                                <a class="fab fa-github-square github-ico spin-out"
+                                    href="https://github.com/oguru/alien-invasion" target="_blank"></a>
+                            </div>
+                            <div id="aliens" class="icon project-link" onmouseover="spinOut('aliens')"
+                                onmouseout="returnDefault('aliens')">
+                                <a class="far fa-folder folder-ico"></a>
+                                <a class="far fa-folder-open folder-open spin-out"
+                                    href="https://alieninvasion.peterdev.co.uk/" target="_blank"></a>
+                            </div>
+                        </div>
+                        <div class="concepts">
+                            <p>Javascript - HTML - CSS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-parent">
+                <div class="project-content">
+                    <div class="project-bg-overlay">
+                    </div>
+                    <img class="project-img" src="./images/dota.png" alt="Dota Defenders">
+                    <div class="project-info" onmouseover="animateBoxOn('dotacode', 'dota', 5)"
+                        onmouseout="animateBoxOff('dotacode', 'dota', 5)">
+                        <div class="proj-title-desc">
+                            <h3>Dota Defenders</h3>
+                            <p>A personal project to create a randomised ability turn based card battle game. Inspired
+                                by Ability Draft mode on Dota 2.</p>
+                        </div>
+                        <div id="dota-icons" class="icons">
+                            <div id="dotacode" class="icon code-link" onmouseover="spinOut('dotacode')"
+                                onmouseout="returnDefault('dotacode')">
+                                <a class="fas fa-code code-ico"></a>
+                                <a class="fab fa-github-square github-ico spin-out"
+                                    href="https://github.com/oguru/alien-invasion" target="_blank"></a>
+                            </div>
+                            <div id="dota" class="icon project-link" onmouseover="spinOut('dota')"
+                                onmouseout="returnDefault('dota')">
+                                <a class="far fa-folder folder-ico nolink"></a>
+                                <a class="fas fa-times folder-open spin-out nolink-cross"></a>
+                            </div>
+                        </div>
+                        <div class="concepts">
+                            <p>React - UI - UX</p>
+                            <p>Authorisation - Database</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <!-- <iframe src="./404.html" frameborder="0"></iframe> -->
