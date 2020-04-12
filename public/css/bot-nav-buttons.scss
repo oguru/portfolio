@@ -1,0 +1,119 @@
+@import "./palette.scss";
+@import "./variables.scss";
+@import "./animation.scss";
+
+@mixin bot-nav-buttons {
+    @include bot-btn-anim;
+
+    #projects-button {
+        margin-top: $base-spacing * 2;
+    }
+
+    .light-bg-button {
+        .botnav-button {
+            box-shadow: 0 0 0 2px $primary-darker;
+            color: white;
+            background: $primary;
+            position: relative;
+            bottom: 0;
+
+            &:hover {
+                bottom: 4px;
+                color: $primary;
+                background: $secondary;
+                width: 155px;
+                padding: $base-spacing * 2;
+                box-shadow: 0 3px 5px 0 #888888;
+              }
+        }
+    }
+
+    .bot-mid-button {
+        // margin: $base-spacing * 2 auto $base-spacing * 7 auto;
+        // padding-bottom: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        // height: 55px;
+        min-height: 10vh; 
+        // padding-bottom: $base-spacing * 4;     
+        margin-bottom: $base-spacing * 2;
+    
+        .botnav-button {
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            width: 150px;
+            text-align: center; 
+            z-index: 1;
+            box-shadow: 0 0 0 2px white;
+            border-radius: $border-radius;
+            transition: 0.5s;
+            padding: $base-spacing * 1.5;
+            // margin-bottom: $base-spacing * 2;
+    
+          &:hover {
+            color: $primary;
+            background: $secondary;
+            box-shadow: 0 0 0 0 ;
+          }
+        }
+      }
+          
+    .arrow{
+    // margin: 0 auto;
+    position: relative;
+    left: 2px;
+    // padding: $base-spacing * 2 0 0 0;
+
+        .borderClass {
+            border-bottom: 4px solid $primary;
+            border-right: 4px solid $primary;
+            animation: arrow 2s infinite;
+
+            @include arrow-animation
+        }
+
+        span{
+            transition: 1s;
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: -15px;
+        }
+    }
+
+    @media only screen and (min-width: 375px) {
+        .bot-mid-button {
+            margin-bottom: $base-spacing * 3;
+            height: 55px;
+        }
+        .arrow {
+            span{
+                transition: 1s;
+                display: block;
+                width: 25px;
+                height: 25px;
+                margin: -15px;
+            }
+    
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .bot-mid-button {
+            height: 80px; 
+            font-size: 25px;
+            margin-bottom: $base-spacing * 7;
+            .botnav-button {
+                width: 150px;
+                padding: $base-spacing * 2;
+
+            }
+        }
+        .skills-button {
+            display: none;
+        }
+    }
+}

@@ -31,7 +31,3 @@ $standard-border: black 2px solid;
     justify-content: center;
     align-items: center;
 }
-
-@mixin nav-animation {
-    transition: 1s cubic-bezier(.52,.35,.5,1);
-}

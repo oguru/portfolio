@@ -7,12 +7,17 @@
 @import "./contact.scss";
 @import "./nav-lines.scss";
 @import "./projects.scss";
+@import "./bot-nav-buttons.scss";
 
 * {
   margin: 0;
   padding: 0;
   font-family: Raleway, sans-serif;
   box-sizing: border-box;
+}
+
+h1, h2, h3, p, li {
+  pointer-events: none;
 }
 
 body {
@@ -37,6 +42,7 @@ section {
   height: 100vh;
 }
 
+@include bot-nav-buttons;
 @include nav-lines;
 @include nav-button-anim;
 @include nav;

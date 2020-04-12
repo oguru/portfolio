@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/ad20ab186e.js" crossorigin="anonymous"></script>
     <script src="./main.js" async defer></script>
 
-<body>
+<body onresize="setViewWidth()">
 
     <nav id="nav-btn-anim" class="nav-hover" onmouseover="moveNav()" onmouseout="returnNav()">
         <span id="mob-top-btn" class="nav-text nav-span fas fa-home" href="#blog" onclick="returnToTop()"></span>
@@ -29,7 +29,7 @@
         </div>
     </nav>
 
-    <button id="botnav-button" onmouseover="moveBotNav()" onmouseout="returnBotNav()">
+    <button id="bot-navbar" onmouseover="moveBotNav()" onmouseout="returnBotNav()">
         <span id="top-txt" href="#landing" onclick="returnToTop()">Top</span>
         <div id="go-to-top-icon">
             <span id="nav-line-4" class="nav-line"></span>
@@ -54,51 +54,21 @@
             <p>Focused on bringing the best user experience possible</p>
         </div>
         <div class="bot-mid-button bot-btn-anim">
-            <a class="landing-button" href="#about" onmouseover="showArrow()" onmouseout="removeArrow()">About</a>
-            <!-- onload="createArrows(arrow1)" -->
+            <a class="botnav-button" href="#about" onmouseover="showArrow('0')" onmouseout="removeArrow('0')">About</a>
             <div class="arrow">
                 <span class="arrowspan"></span>
             </div>
-            <!-- <div class="arrow"></div> -->
         </div>
     </section>
 
     <section id="about">
-        <div id=about-bg></div>
+        <!-- <div id=about-bg></div> -->
         <div id="about-title">
             <h2>About Me</h2>
             <p>I am a junior software developer at the end of a 12 week front end developer course with _nology, and
                 looking forward to bringing many ideas to life.</p>
             <!-- <span class="fas fa-ellipsis-h"></span> -->
         </div>
-        <!-- <div id="hidden-txt">
-            <p>I am a junior software developer at the end of a 12 week front end developer course with _nology, and
-                looking forward to bringing many ideas to life.</p>
-        </div> -->
-        <!-- <div id="hidden-txt">
-            <p>I am a junior software developer at the end of a 12 week front end developer course with _nology, and I
-                never had any idea that programming could be so awesome.</p>
-            <p>The idea that you can imagine something, and then write a long sequence of what used to look like an
-                alien language so
-                that you can literally give instructions to a machine to bring it to life is insane!</p>
-            <p>My work history is quite a varied one. I have had a variety of jobs, not really knowing exactly what I
-                wanted to do.</p>
-            <p>I enjoyed learning some QBasic and writing text based games as a child and decided that I wanted to be a
-                programmer when
-                I grew up. However, I was always told I would need to study high level Mathematics to do so and that
-                programming
-                was boring, and I drifted away from the idea.</p>
-            <p>My interest was sparked again last year and I decided to try and learn some C, which was challenging but
-                enjoyable. Once I realised bootcamps existed, that you don't need a Maths degree and that I could
-                actually pursue a career in development, I moved to Bristol to start a new chapter of my life and do the
-                course, and I haven't looked back
-                since.</p>
-            <p>I never imagined that I could enjoy something so much that putting endless
-                hours of learning into it doesn't feel like work. I just wish there were more hours in the day so I
-                could !</p>
-            <p>People always say to find work that you enjoy. Before I was merely working to live. I know that I am now
-                back on the right path for me and am looking forward to bringing many ideas to life.</p>
-        </div> -->
 
         <section>
             <div class="left-panel about-panel">
@@ -134,23 +104,33 @@
                 <a class="fas fa-low-vision about-icon"></a>
             </div>
         </section>
+
+        <div class="bot-mid-button bot-btn-anim light-bg-button">
+            <a class="botnav-button" href="#skills" onmouseover="showArrow('1')"
+                onmouseout="removeArrow('1')">Skills</a>
+            <div class="arrow">
+                <span class="arrowspan"></span>
+            </div>
+        </div>
+
     </section>
 
     <section id="skills">
 
-        <section id="language-flex">
-            <div id="language-text-flex">
+        <!-- <div id="skill-box-cont"> -->
+        <div id="language-flex" class="skill-box">
+            <div id="language-text-flex" class="text-flex">
+                <h2>Languages</h2>
                 <ul id="languages">
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>Sass</li>
                     <li>Javascript</li>
                 </ul>
-                <h2>Languages</h2>
             </div>
-        </section>
-        <section id="tools-flex">
-            <div id="tools-text-flex">
+        </div>
+        <div id="tools-flex" class="skill-box">
+            <div id="tools-text-flex" class="text-flex">
                 <h2>Tools</h2>
                 <ul id="dev-tools">
                     <li>React</li>
@@ -164,23 +144,32 @@
                     <li>Postman</li>
                 </ul>
             </div>
-        </section>
+        </div>
 
-        <section id="skills-flex">
-            <div id="skills-text-flex">
+        <div id="skills-flex" class="skill-box">
+            <div id="skills-text-flex" class="text-flex">
                 <h2>Skills</h2>
                 <ul id="other-skills">
                     <li>OOP</li>
                     <li>Agile development</li>
                     <li>Unit testing</li>
+                    <li>Remote working</li>
                     <li>Authentication</li>
                     <li>Authorisation</li>
                     <li>Source control</li>
                     <li>Rest API</li>
-                    <li>Remote working</li>
                 </ul>
             </div>
-        </section>
+        </div>
+        <!-- </div> -->
+
+        <div id="projects-button" class="bot-mid-button bot-btn-anim light-bg-button">
+            <a class="botnav-button" href="#projects" onmouseover="showArrow('2')"
+                onmouseout="removeArrow('2')">Projects</a>
+            <div class="arrow">
+                <span class="arrowspan"></span>
+            </div>
+        </div>
     </section>
 
     <section id="projects">

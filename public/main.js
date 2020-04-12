@@ -39,39 +39,33 @@
 //    )
 // }
 
+let viewWidth = document.getElementsByTagName("body")[0].clientWidth;
+
+
 
 
 const arrows = document.getElementsByClassName("arrowspan");
 
-showArrow = () => {
-   arrows[0].classList.add("borderClass");
-   // arrows[1].classList.add("borderClass");
-   // arrows[2].classList.add("borderClass");
-   // arrows[3].classList.add("borderClass");
-   // arrows[4].classList.add("borderClass");
-   // arrows[5].classList.add("borderClass");
+showArrow = (index) => {
+   arrows[index].classList.add("borderClass");
 }
 
-removeArrow = () => {
-   arrows[0].classList.remove("borderClass");
-   // arrows[1].classList.remove("borderClass");
-   // arrows[2].classList.remove("borderClass");
-   // arrows[3].classList.remove("borderClass");
-   // arrows[4].classList.remove("borderClass");
-   // arrows[5].classList.remove("borderClass");
+removeArrow = (index) => {
+   arrows[index].classList.remove("borderClass");
 }
 
 const navBar = document.querySelector("#nav-btn-anim");
 const navIcon = document.querySelector("#nav-icon");
 const navLines = document.querySelectorAll(".nav-line");
 const navText = document.querySelectorAll(".nav-text");
+const botNav = document.querySelector("#bot-navbar");
 
 const closeNav = () => {
+   // if (viewWidth < 768)
    navBar.classList.remove("nav-hover");
-   navBar.classList.add("ignore-mouse");
+   ignorePointer(navBar);
    setTimeout(() => {
       navBar.classList.add("nav-hover");
-      navBar.classList.remove("ignore-mouse");
    }, 1000);
 }
 
@@ -83,16 +77,31 @@ const clickNavLink = (link) => {
 }
 
 const returnToTop = () => {
+   ignorePointer(botNav);
+   ignorePointer(navBar);
    closeNav();
-   setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }), 1000);
+   returnBotNav();
+   if (viewWidth < 768) {
+      setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }), 1000);
+   }
+   else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+   }
 }
 
 const ignorePointer = (ele, index) => {
-   ele[index].classList.add("ignore-mouse");
-   setTimeout(() => {
-      ele[index].classList.remove("ignore-mouse");
-   }, 1000);
-
+   if (index) {
+      ele[index].classList.add("ignore-mouse");
+      setTimeout(() => {
+         ele[index].classList.remove("ignore-mouse");
+      }, 1000)
+   }
+   else {
+      ele.classList.add("ignore-mouse");
+      setTimeout(() => {
+         ele.classList.remove("ignore-mouse");
+      }, 1000);
+   }
 };
 
 // let navOpenCheck = false;
@@ -102,7 +111,7 @@ const moveNav = () => {
    navIcon.classList.add("moveNavIcon");
 
    for (let i = 0; i < 3; i++) {
-      navLines[i].classList.add("navLineAnimate")
+      navLines[i].classList.add("navLineAnimate");
    }
 
    for (let i = 0; i < navText.length; i++) {
@@ -144,10 +153,21 @@ const moveNav = () => {
 
 const returnNav = () => {
 
-   navBar.classList.add("nav-delay");
-   navIcon.classList.add("nav-delay");
-   navIcon.classList.remove("moveNavIcon");
+   if (viewWidth < 768) {
+      navBar.classList.add("nav-delay");
+      navIcon.classList.add("nav-delay");
+      setTimeout(() => {
+         navBar.classList.remove("nav-delay");
+         navIcon.classList.remove("nav-delay");
+      }, 500);
+   }
 
+   else {
+      navBar.classList.remove("nav-delay");
+      navIcon.classList.remove("nav-delay");
+   }
+
+   navIcon.classList.remove("moveNavIcon");
    for (let i = 0; i < 3; i++) {
       navLines[i].classList.remove("navLineAnimate")
    }
@@ -155,10 +175,11 @@ const returnNav = () => {
    for (let i = 0; i < navText.length; i++) {
       navText[i].classList.remove("bottom-zero");
    }
-   setTimeout(() => {
-      navBar.classList.remove("nav-delay");
-      navIcon.classList.remove("nav-delay");
-   }, 500);
+}
+
+const setViewWidth = () => {
+   viewWidth = document.getElementsByTagName("body")[0].clientWidth;
+   returnNav();
 }
 
 const goToTopIcon = document.querySelector("#go-to-top-icon");

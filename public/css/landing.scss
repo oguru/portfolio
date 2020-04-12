@@ -6,10 +6,8 @@
         // background-color: black;
         background-size: cover;
         background-position: center;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: space-between;
+        @include flex-column;
+        // justify-content: space-between;
         text-align: center;
       
         #landing-main {
@@ -32,69 +30,16 @@
             font-size: 1.2em;
             padding: $base-spacing * 4 $base-spacing * 2;
           }
-          a {
-            @include links;
-            width: 50px;
-            height: 50px;
-            background-color: white;
-            padding: 0;
-            margin: 15px auto;
-          }
-        }
-        
-        @include bot-btn-anim;
-      
-        .bot-mid-button {
-          font-size: 20px;
-          // margin: $base-spacing * 2 auto $base-spacing * 7 auto;
-          // padding-bottom: 5vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-          height: 80px; 
-          // padding-bottom: $base-spacing * 4;     
-          margin-bottom: $base-spacing * 7;
-      
-          .landing-button {
-            @include links;
-            z-index: 1;
-            box-shadow: 0 0 0 2px white;
-            border-radius: $border-radius;
-            transition: 0.5s;
-            padding: $base-spacing * 2;
-            // margin-bottom: $base-spacing * 2;
-      
-            &:hover {
-              color: $primary;
-              background: $secondary;
-              box-shadow: 0 0 0 0 ;
-            }
-          }
-        }
-      
-        .arrow{
-          // margin: 0 auto;
-          position: relative;
-          left: 2px;
-          // padding: $base-spacing * 2 0 0 0;
-      
-          .borderClass {
-            border-bottom: 4px solid $primary;
-            border-right: 4px solid $primary;
-            animation: arrow 2s infinite;
-      
-            @include arrow-animation
-        }
-      
-          span{
-              transition: 1s;
-              display: block;
-              width: 25px;
-              height: 25px;
-              margin: -15px;
-          }
-        }
+
+          // a {
+          //   @include links;
+          //   width: 50px;
+          //   height: 50px;
+          //   background-color: white;
+          //   padding: 0;
+          //   margin: 15px auto;
+          // }
+        }        
     }
     
 @media only screen and (min-width: 768px) {

@@ -7,12 +7,17 @@
 
   #projects {
     text-align: center;
+    background-color: $primary-bg;
+    height: 100%;
 
     h2 {
-      padding: $base-spacing * 4;
+      padding: $base-spacing * 3;
+      padding-top: $base-spacing * 5;
+      color: white;
 
     }
     #projects-group {   
+      z-index: 10;
       @include flex-column;
 
       .project-parent {
@@ -74,7 +79,7 @@
           }
           
           img {
-            z-index: -10;
+            z-index: 1;
             overflow: hidden;
             object-fit: cover;
             max-width: 100%;
