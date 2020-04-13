@@ -80,6 +80,8 @@
         padding: 10px;
         margin: 0 auto;
         @include flex-column;
+        text-shadow: rgb(68, 97, 93) 0px 2px 2px;
+        box-shadow: 0 2px 8px -2px rgb(126, 126, 126);
       }
 
 
@@ -187,7 +189,7 @@
     // padding-top: $base-spacing * 5;
 
     h2 {
-      color: $secondary;
+      color: $tertiary;
       font-size: 20px;
       padding: 0 $base-spacing * 2;
       width: 48vw;

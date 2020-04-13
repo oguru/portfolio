@@ -31,3 +31,13 @@ $standard-border: black 2px solid;
     justify-content: center;
     align-items: center;
 }
+
+@mixin project-box-size {
+    width: 280px;
+    height: 280px;
+}
+
+@mixin project-box-hover-size {
+        width: 290px;
+        height: 290px;
+}

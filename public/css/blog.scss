@@ -1,0 +1,66 @@
+@import "./palette.scss";
+@import "./variables.scss";
+@import "./animation.scss";
+
+@mixin blog {
+    // #blog {
+
+    //     background-color: $light-bg;
+    //     padding: $base-spacing * 3;
+    //     padding-top: 0;
+
+    //     h2 {
+    //         color: black;
+    //         padding: $base-spacing * 5;
+    //     }
+
+    //     #blog-posts {
+    //         @include flex-column;
+    //         justify-content: space-between;
+    //         .blog-post {
+    //             position: relative;
+    //             border-radius: $border-radius;
+    //             // background-color: rgb(236, 229, 217);
+    //             // border: $primary 2px solid;
+    //             padding: $base-spacing * 4;
+    //             box-shadow: 0 0 8px 2px lightgrey;
+    //             text-align: center;
+    //             // bottom: 0;
+    //             transition: 0.3s ease-in-out;
+    //             width: 300px;
+
+    //             &:hover {
+    //                 // bottom: 2px;
+    //             }
+
+    //             #blog-header {
+    //                 display: flex;
+    //                 justify-content: space-between;
+    //                 // border-bottom: 2px solid black;
+    //                 padding: $base-spacing * 2 0;
+    //             }
+
+    //             img {
+    //                 width: 260px;
+    //                 border-radius: $border-radius;
+    //             }
+
+    //             h3 {
+    //                 color: black;
+    //                 text-align: left;
+    //                 border-bottom: $primary solid 2px;
+
+    //             }
+
+    //             .blog-summary {
+    //                 text-align: left;
+    //             }
+
+    //             .modal-text {
+    //                 display: none;
+    //             }
+    //         }
+    //     }
+    // }
+
+}

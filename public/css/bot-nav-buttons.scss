@@ -9,21 +9,27 @@
         margin-top: $base-spacing * 2;
     }
 
-    .light-bg-button {
+    #blog-button {
+        margin: 0;
+        // padding-bottom: $base-spacing * 2;
+    }
+
+    .bot-mid-button.light-bg-button {
         .botnav-button {
-            box-shadow: 0 0 0 2px $primary-darker;
+            box-shadow: 0 0 0 0;
             color: white;
             background: $primary;
             position: relative;
             bottom: 0;
+            box-shadow: 0 2px 8px -2px rgb(126, 126, 126);
 
             &:hover {
                 bottom: 4px;
+                width: 155px;
                 color: $primary;
                 background: $secondary;
-                width: 155px;
                 padding: $base-spacing * 2;
-                box-shadow: 0 3px 5px 0 #888888;
+                box-shadow: 0 2px 7px 0 rgb(184, 190, 180);
               }
         }
     }
@@ -41,6 +47,7 @@
         margin-bottom: $base-spacing * 2;
     
         .botnav-button {
+            position: relative;
             font-size: 20px;
             color: white;
             text-decoration: none;
@@ -51,13 +58,14 @@
             border-radius: $border-radius;
             transition: 0.5s;
             padding: $base-spacing * 1.5;
+            bottom: 0;
             // margin-bottom: $base-spacing * 2;
     
           &:hover {
             color: $primary;
             background: $secondary;
-            box-shadow: 0 0 0 0 ;
-          }
+            box-shadow: 0 0 0 0;
+            }
         }
       }
           

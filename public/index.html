@@ -175,7 +175,7 @@
     <section id="projects">
         <h2>Projects</h2>
         <div id="projects-group">
-            <div class="project-parent">
+            <article class="project-parent">
                 <div class="project-content">
                     <div class="project-bg-overlay">
                     </div>
@@ -206,9 +206,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="project-parent">
+            <article class="project-parent">
                 <div class="project-content">
                     <div class="project-bg-overlay">
                     </div>
@@ -240,9 +240,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="project-parent">
+            <article class="project-parent">
                 <div class="project-content">
                     <div class="project-bg-overlay">
                     </div>
@@ -275,9 +275,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="project-parent">
+            <article class="project-parent">
                 <div class="project-content">
                     <div class="project-bg-overlay">
                     </div>
@@ -311,9 +311,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="project-parent">
+            <darticle class="project-parent">
                 <div class="project-content">
                     <div class="project-bg-overlay">
                     </div>
@@ -346,45 +346,106 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                </article>
 
-            <div class="project-parent">
-                <div class="project-content">
-                    <div class="project-bg-overlay">
-                    </div>
-                    <img class="project-img" src="./images/dota.png" alt="Dota Defenders">
-                    <div class="project-info" onmouseover="animateBoxOn('dotacode', 'dota', 5)"
-                        onmouseout="animateBoxOff('dotacode', 'dota', 5)">
-                        <div class="proj-title-desc">
-                            <h3>Dota Defenders</h3>
-                            <p>A personal project to create a randomised ability turn based card battle game. Inspired
-                                by Ability Draft mode on Dota 2.</p>
+                <article class="project-parent">
+                    <div class="project-content">
+                        <div class="project-bg-overlay">
                         </div>
-                        <div id="dota-icons" class="icons">
-                            <div id="dotacode" class="icon code-link" onmouseover="spinOut('dotacode')"
-                                onmouseout="returnDefault('dotacode')">
-                                <a class="fas fa-code code-ico"></a>
-                                <a class="fab fa-github-square github-ico spin-out"
-                                    href="https://github.com/oguru/alien-invasion" target="_blank"></a>
+                        <img class="project-img" src="./images/dota.png" alt="Dota Defenders">
+                        <div class="project-info" onmouseover="animateBoxOn('dotacode', 'dota', 5)"
+                            onmouseout="animateBoxOff('dotacode', 'dota', 5)">
+                            <div class="proj-title-desc">
+                                <h3>Dota Defenders</h3>
+                                <p>A personal project to create a randomised ability turn based card battle game.
+                                    Inspired
+                                    by Ability Draft mode on Dota 2.</p>
                             </div>
-                            <div id="dota" class="icon project-link" onmouseover="spinOut('dota')"
-                                onmouseout="returnDefault('dota')">
-                                <a class="far fa-folder folder-ico nolink"></a>
-                                <a class="fas fa-times folder-open spin-out nolink-cross"></a>
+                            <div id="dota-icons" class="icons">
+                                <div id="dotacode" class="icon code-link" onmouseover="spinOut('dotacode')"
+                                    onmouseout="returnDefault('dotacode')">
+                                    <a class="fas fa-code code-ico"></a>
+                                    <a class="fab fa-github-square github-ico spin-out"
+                                        href="https://github.com/oguru/alien-invasion" target="_blank"></a>
+                                </div>
+                                <div id="dota" class="icon project-link" onmouseover="spinOut('dota')"
+                                    onmouseout="returnDefault('dota')">
+                                    <a class="far fa-folder folder-ico nolink"></a>
+                                    <a class="fas fa-times folder-open spin-out nolink-cross"></a>
+                                </div>
+                            </div>
+                            <div class="concepts">
+                                <p>React - UI - UX</p>
+                                <p>Authorisation - Database</p>
                             </div>
                         </div>
-                        <div class="concepts">
-                            <p>React - UI - UX</p>
-                            <p>Authorisation - Database</p>
-                        </div>
                     </div>
-                </div>
-            </div>
-
         </div>
+
+        </article>
         <!-- <iframe src="./404.html" frameborder="0"></iframe> -->
 
+        <div id="blog-button" class="bot-mid-button bot-btn-anim">
+            <a class="botnav-button" href="#blog" onmouseover="showArrow('3')" onmouseout="removeArrow('3')">Blog</a>
+            <div class="arrow">
+                <span class="arrowspan"></span>
+            </div>
+        </div>
+    </section>
 
+    <section id="blog">
+        <h2>Blog</h2>
+        <div id="blog-posts">
+            <article class="blog-post">
+                <img src="./images/do-more.jpg" alt="Do more">
+                <div id="blog-header">
+                    <h3>Finding My Path</h3>
+                    <h4>10.04.2020</h4>
+                </div>
+                <div class="blog-summary">
+                    <p>From surviving to thriving, my path to becoming a junior software developer.</p>
+                </div>
+                <div class="modal-text">
+                    <p>You wake up, drag yourself out of bed and begrudgingly make your way to work for another day of
+                        surviving. We've all been there, right? That's how my life used to be in the not too distant
+                        past.</p>
+                    <p>Four months ago I decided to stand at the deep end and jump straight in. I am now a junior
+                        software developer at the end of a 12 week front end developer course with
+                        _nology, and I
+                        never had any idea that programming could be so awesome!</p>
+                    <p>The idea that you can imagine something, and then write a long sequence of what used to look
+                        like an
+                        alien language so
+                        that you can literally give instructions to a machine to bring it to life is insane!</p>
+                    <p>My work history is quite a varied one. I have had a variety of jobs, not really knowing
+                        exactly what I
+                        wanted to do.</p>
+                    <p>I enjoyed learning some QBasic and writing text based games as a child and decided that I
+                        wanted to be a
+                        programmer when
+                        I grew up. However, I was always told I would need to study high level Mathematics to do so
+                        and that
+                        programming
+                        was boring, and I drifted away from the idea.</p>
+                    <p>My interest was sparked again last year and I decided to try and learn some C, which was
+                        challenging but
+                        enjoyable. Once I realised bootcamps existed, that you don't need a Maths degree and that I
+                        could
+                        actually pursue a career in development, I moved to Bristol to start a new chapter of my
+                        life and do the
+                        course, and I haven't looked back
+                        since.</p>
+                    <p>I never imagined that I could enjoy something so much that putting endless
+                        hours of learning into it doesn't feel like work. I just wish there were more hours in the
+                        day so I
+                        could !</p>
+                    <p>People always say to find work that you enjoy. Before I was merely working to live. I know
+                        that I am now
+                        back on the right path for me and am looking forward to bringing many ideas to life.</p>
+                </div>
+                <p></p>
+            </article>
+        </div>
     </section>
 
     <section id="contact">
