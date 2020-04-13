@@ -231,7 +231,74 @@
 		transition: all 0.3s ease-in-out 0s;
 		opacity: 1;
 	}
+}
 
+@mixin blog-anim {
+	#blog {
+		#blog-posts {
+			.blog-post {
+				pointer-events: none;
+
+			.modal-box.show-blog {
+				box-shadow: 1px 4px 14px 8px lightgrey;
+				animation: show-blog 2s ease-out;	
+				animation-fill-mode: forwards;	
+				max-height: 80vh;
+			}
+
+			.show-modal-content, .show-modal-content img, p {
+				opacity: 1 !important;
+			}
+
+			// .show-modal-content h3 {
+			// 	transition-delay: 1s;
+			// }
+		}
+
+		}
+	}
+
+	@keyframes show-blog {
+		0% {
+			// pointer-events: initial;
+			top: -40px;
+		}
+	
+		30% {
+			top: 10vh;
+
+		}
+		60% {
+			top: 10vh;
+		}
+
+		100% {
+			top: 10vh;
+			height: 80vh;
+
+		}
+	}
+
+	@keyframes show-blog-content {
+		0% {
+			// pointer-events: initial;
+			top: -40px;
+		}
+	
+		30% {
+			top: 10vh;
+
+		}
+		60% {
+			top: 10vh;
+		}
+
+		100% {
+			top: 10vh;
+			height: 80vh;
+
+		}
+	}
 
 }
 

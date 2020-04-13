@@ -5,17 +5,18 @@
     // padding: $base-spacing * 3;
     @include flex-column;
     justify-content: space-between;
+    // background-color: white;
     background-color: $light-bg;
-    // background-color: $light-bg;
 
-    #about-bg {
-      position: absolute;
-      top: 100vh;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: $light-bg;
-    }
+    // #about-bg {
+    //   position: absolute;
+    //   top: 100vh;
+    //   left: 0;
+    //   width: 100vw;
+    //   height: 100vh;
+    //   // background-color: white;
+    //   background-color: $light-bg;
+    // }
 
     * {
       text-align: center;
@@ -231,7 +232,7 @@
     #language-flex {
 
       #language-text-flex {
-        background: linear-gradient(90deg, transparent 0%, transparent 50%, $primary 50%, $primary 100%);
+        background: linear-gradient(90deg, white 0%, white 50%, $primary 50%, $primary 100%);
         border-top-left-radius: 25% 50%;
         border-bottom-right-radius: 25% 50%;
         border-top-right-radius: 10px;
@@ -251,7 +252,7 @@
     #tools-flex {
 
       #tools-text-flex {
-        background: linear-gradient(270deg, transparent 0%, transparent 50%, $primary 50%, $primary 100%);
+        background: linear-gradient(270deg, white 0%, white 50%, $primary 50%, $primary 100%);
         border-bottom-left-radius: 25% 50%;
         border-top-right-radius: 25% 50%;
         border-top-left-radius: 10px;
@@ -271,7 +272,7 @@
 
 
       #skills-text-flex {
-        background: linear-gradient(90deg, transparent 0%, transparent 50%, $primary 50%, $primary 100%);
+        background: linear-gradient(90deg, white 0%, white 50%, $primary 50%, $primary 100%);
         border-top-left-radius: 25% 50%;
         border-bottom-right-radius: 25% 50%;
         border-top-right-radius: 10px;

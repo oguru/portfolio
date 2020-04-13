@@ -1,58 +1,49 @@
-// const getArrows = document.getElementsByClassName("arrow");
-
-// class Arrow {
-// constructor(id) {
-//    this.arrows = [       
-//       // id="${id}"         
-//       `<span  class="arrowspan"></span>`,
-//       `<span class="arrowspan"></span>`,
-//       `<span class="arrowspan"></span>`
-//    ];
-// }
-
-//    showArrow = () => {
-//       this.arrows[0].classList.add("borderClass");
-//       this.arrows[1].classList.add("borderClass");
-//       this.arrows[2].classList.add("borderClass");
-//    };
-
-//    removeArrow = () => {
-//       this.arrows[0].classList.remove("borderClass");
-//       this.arrows[1].classList.remove("borderClass");
-//       this.arrows[2].classList.remove("borderClass");
-//    };
-
-//    }
-
-//    createArrows = id => new Arrow(id);
-// const newArrow = new Arrow;
-// console.log(newArrow.arrows);
-
-
-// renderArrow = () => {
-//    return (
-//       <div class="arrow">
-//                 <span class="arrowspan"></span>
-//                 <span class="arrowspan"></span>
-//                 <span class="arrowspan"></span>
-//            </div>
-//    )
-// }
-
+//Global
 let viewWidth = document.getElementsByTagName("body")[0].clientWidth;
 
+const ignorePointer = (ele, index) => {
+   if (index) {
+      ele[index].classList.add("ignore-mouse");
+      setTimeout(() => {
+         ele[index].classList.remove("ignore-mouse");
+      }, 1000)
+   }
+   else {
+      ele.classList.add("ignore-mouse");
+      setTimeout(() => {
+         ele.classList.remove("ignore-mouse");
+      }, 1000);
+   }
+};
+
+const resumePointer = (ele, index) => {
+   if (index) {
+      ele[index].classList.add("ignore-mouse");
+      setTimeout(() => {
+         ele[index].classList.remove("ignore-mouse");
+      }, 1000)
+   }
+   else {
+      ele.classList.add("ignore-mouse");
+      setTimeout(() => {
+         ele.classList.remove("ignore-mouse");
+      }, 1000);
+   }
+};
 
 
+//Arrows under bottom nav buttons
 
 const arrows = document.getElementsByClassName("arrowspan");
 
 showArrow = (index) => {
    arrows[index].classList.add("borderClass");
 }
-
 removeArrow = (index) => {
    arrows[index].classList.remove("borderClass");
 }
+
+//Navbar elements and functions
 
 const navBar = document.querySelector("#nav-btn-anim");
 const navIcon = document.querySelector("#nav-icon");
@@ -72,7 +63,8 @@ const closeNav = () => {
 const clickNavLink = (link) => {
    closeNav();
    setTimeout(() => {
-      window.location.assign(`https://peterdev.co.uk/${link}`);
+      // window.location.assign(`https://peterdev.co.uk/${link}`);
+      window.location.assign(`http://127.0.0.1:5501/public/index.html${link}`);
    }, 1000);
 }
 
@@ -89,20 +81,6 @@ const returnToTop = () => {
    }
 }
 
-const ignorePointer = (ele, index) => {
-   if (index) {
-      ele[index].classList.add("ignore-mouse");
-      setTimeout(() => {
-         ele[index].classList.remove("ignore-mouse");
-      }, 1000)
-   }
-   else {
-      ele.classList.add("ignore-mouse");
-      setTimeout(() => {
-         ele.classList.remove("ignore-mouse");
-      }, 1000);
-   }
-};
 
 // let navOpenCheck = false;
 
@@ -300,16 +278,35 @@ const returnDefault = (iconName) => {
    defaultState[3].classList.add("spin-out");
 }
 
-// renderArrow = () => {
-//    return (
-//       <div class="arrow">
-//                 <span class="arrowspan"></span>
-//                 <span class="arrowspan"></span>
-//                 <span class="arrowspan"></span>
-//            </div>
-//    )
-// }
+const getBlog = name => document.getElementById(name);
+const getBlogContent = blog => blog.querySelectorAll(".modal-content");
+const getBlogContainer = () => document.querySelectorAll(".blog-post")
 
+const showBlog = (name, index) => {
+   document.getElementsByTagName("body")[0].classList.add("no-scroll")
+   const blogContainer = getBlogContainer()[index]
+   const blog = getBlog(name);
+   const blogContent = getBlogContent(blog)
+   blogContainer.classList.add("")
+   blog.classList.add("show-blog");
+   for (let i = 0; i < blogContent.length; i++) {
+      blogContent[i].classList.add("show-modal-content")
+   };
+   alert("Active");
+}
+
+const closeBlog = (name) => {
+   document.getElementsByTagName("body")[0].classList.remove("no-scroll")
+   const blog = getBlog(name);
+   const blogContent = getBlogContent(blog)
+
+
+   blog.classList.add("show-blog");
+   for (let i = 0; i < blogContent.length; i++) {
+      blogContent[i].classList.remove("show-modal-content")
+   };
+
+}
 
 
 

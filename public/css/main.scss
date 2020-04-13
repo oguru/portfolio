@@ -21,6 +21,10 @@ h1, h2, h3, p, li {
   pointer-events: none;
 }
 
+.no-scroll {
+  overflow: hidden
+}
+
 body {
   overflow-x: hidden;
 }
