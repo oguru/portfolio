@@ -8,8 +8,9 @@
     #blog {
 
         background-color: white;
-        padding: $base-spacing * 3;
-        padding-top: 0;
+        padding: 0 $base-spacing * 3;
+        @include flex-column;
+        justify-content: space-between;
 
         h2 {
             color: black;
@@ -21,6 +22,7 @@
             justify-content: space-between;
 
             .blog-post {
+                z-index: 80;
                 // @include flex-column;
                 // position: relative;
                 border-radius: $border-radius;
@@ -33,6 +35,10 @@
                 background-color: $light-bg;
                 transition: 0.3s ease-in-out;
                 pointer-events: initial;
+
+                &.ignore-mouse {
+                    pointer-events: none;
+                  }
 
                 &:hover {
                     cursor: pointer;
@@ -93,7 +99,9 @@
                     padding: $base-spacing $base-spacing * 4;
                     overflow-y:scroll;
                     cursor: default;
-    				max-height: 80vh;
+                    max-height: 80vh;
+                    pointer-events: auto;  
+                    max-height: 80vh;              
 
                     span {
                         @include flex-column;

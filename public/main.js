@@ -1,33 +1,30 @@
 //Global
 let viewWidth = document.getElementsByTagName("body")[0].clientWidth;
 
+window.onload = function () {
+   document.getElementsByClassName('contact-form')[0].addEventListener('submit', function (event) {
+      event.preventDefault();
+      // generate the contact number value
+      this.contact_number.value = Math.random() * 100000 | 0;
+      emailjs.sendForm('gmail', 'portfolio', this);
+   });
+}
+
 const ignorePointer = (ele, index) => {
    if (index) {
       ele[index].classList.add("ignore-mouse");
-      setTimeout(() => {
-         ele[index].classList.remove("ignore-mouse");
-      }, 1000)
    }
    else {
       ele.classList.add("ignore-mouse");
-      setTimeout(() => {
-         ele.classList.remove("ignore-mouse");
-      }, 1000);
    }
 };
 
 const resumePointer = (ele, index) => {
    if (index) {
-      ele[index].classList.add("ignore-mouse");
-      setTimeout(() => {
-         ele[index].classList.remove("ignore-mouse");
-      }, 1000)
+      ele[index].classList.remove("ignore-mouse");
    }
    else {
-      ele.classList.add("ignore-mouse");
-      setTimeout(() => {
-         ele.classList.remove("ignore-mouse");
-      }, 1000);
+      ele.classList.remove("ignore-mouse");
    }
 };
 
@@ -56,15 +53,17 @@ const closeNav = () => {
    navBar.classList.remove("nav-hover");
    ignorePointer(navBar);
    setTimeout(() => {
+      resumePointer(navBar);
       navBar.classList.add("nav-hover");
-   }, 1000);
+   }, 1000)
 }
 
 const clickNavLink = (link) => {
    closeNav();
    setTimeout(() => {
-      // window.location.assign(`https://peterdev.co.uk/${link}`);
-      window.location.assign(`http://127.0.0.1:5501/public/index.html${link}`);
+      window.location.assign(`https://peterdev.co.uk/${link}`);
+      // window.location.assign(`http://127.0.0.1:5501/public/index.html${link}`);
+
    }, 1000);
 }
 
@@ -72,6 +71,11 @@ const returnToTop = () => {
    ignorePointer(botNav);
    ignorePointer(navBar);
    closeNav();
+   setTimeout(() => {
+      resumePointer(navBar);
+      resumePointer(botNav);
+   }, 1000)
+
    returnBotNav();
    if (viewWidth < 768) {
       setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }), 1000);
@@ -280,32 +284,48 @@ const returnDefault = (iconName) => {
 
 const getBlog = name => document.getElementById(name);
 const getBlogContent = blog => blog.querySelectorAll(".modal-content");
-const getBlogContainer = () => document.querySelectorAll(".blog-post")
+const getBlogContainer = () => document.querySelectorAll(".blog-post");
 
 const showBlog = (name, index) => {
-   document.getElementsByTagName("body")[0].classList.add("no-scroll")
-   const blogContainer = getBlogContainer()[index]
-   const blog = getBlog(name);
-   const blogContent = getBlogContent(blog)
-   blogContainer.classList.add("")
-   blog.classList.add("show-blog");
-   for (let i = 0; i < blogContent.length; i++) {
-      blogContent[i].classList.add("show-modal-content")
-   };
-   alert("Active");
+   const blogContainer = getBlogContainer()[index];
+   if (blogContainer.classList.contains("ignore-mouse")) {
+      null;
+   }
+   else {
+      document.getElementsByTagName("body")[0].classList.add("no-scroll");
+
+      const blog = getBlog(name);
+      const blogContent = getBlogContent(blog);
+      ignorePointer(blogContainer);
+      blog.classList.remove("hide-blog");
+
+      blog.classList.add("show-blog");
+      for (let i = 0; i < blogContent.length; i++) {
+         blogContent[i].classList.add("show-modal-content")
+      };
+      console.log("showblog");
+   }
 }
 
-const closeBlog = (name) => {
+const closeBlog = (name, index) => {
+   console.log("closeblog");
+
+   const blogContainer = getBlogContainer()[index];
+
    document.getElementsByTagName("body")[0].classList.remove("no-scroll")
    const blog = getBlog(name);
    const blogContent = getBlogContent(blog)
 
-
-   blog.classList.add("show-blog");
+   blog.classList.remove("show-blog");
+   void blog.offsetWidth;
+   blog.classList.add("hide-blog");
    for (let i = 0; i < blogContent.length; i++) {
       blogContent[i].classList.remove("show-modal-content")
    };
-
+   setTimeout(() => {
+      resumePointer(blogContainer);
+      blog.classList.remove("hide-blog");
+   }, 2000);
 }
 
 

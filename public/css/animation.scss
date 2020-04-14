@@ -240,10 +240,15 @@
 				pointer-events: none;
 
 			.modal-box.show-blog {
-				box-shadow: 1px 4px 14px 8px lightgrey;
 				animation: show-blog 2s ease-out;	
 				animation-fill-mode: forwards;	
-				max-height: 80vh;
+				box-shadow: 1px 4px 14px 8px lightgrey;
+			}
+
+			.modal-box.hide-blog {
+				animation: show-blog 2s ease-out;	
+				animation-fill-mode: forwards;	
+				animation-direction: reverse
 			}
 
 			.show-modal-content, .show-modal-content img, p {

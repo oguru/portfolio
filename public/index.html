@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
     <script src="https://kit.fontawesome.com/ad20ab186e.js" crossorigin="anonymous"></script>
     <script src="./main.js" async defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_ToP32nWmWFTffBWaEBSUp");
+        })();
+    </script>
+</head>
 
 <body onresize="setViewWidth()">
 
@@ -70,7 +77,7 @@
             <!-- <span class="fas fa-ellipsis-h"></span> -->
         </div>
 
-        <section>
+        <section id="skill-panels">
             <div class="left-panel about-panel">
                 <!-- <a class="fas fa-expand"></a> -->
                 <a class="fas fa-compress  about-icon"></a>
@@ -105,7 +112,7 @@
             </div>
         </section>
 
-        <div class="bot-mid-button bot-btn-anim light-bg-button">
+        <div id="skills-btn" class="bot-mid-button bot-btn-anim light-bg-button">
             <a class="botnav-button" href="#skills" onmouseover="showArrow('1')"
                 onmouseout="removeArrow('1')">Skills</a>
             <div class="arrow">
@@ -117,51 +124,51 @@
 
     <section id="skills">
 
-        <!-- <div id="skill-box-cont"> -->
-        <div id="language-flex" class="skill-box">
-            <div id="language-text-flex" class="text-flex">
-                <h2>Languages</h2>
-                <ul id="languages">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Sass</li>
-                    <li>Javascript</li>
-                </ul>
+        <div id="skill-box-cont">
+            <div id="language-flex" class="skill-box">
+                <div id="language-text-flex" class="text-flex">
+                    <h2>Languages</h2>
+                    <ul id="languages">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Sass</li>
+                        <li>Javascript</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div id="tools-flex" class="skill-box">
-            <div id="tools-text-flex" class="text-flex">
-                <h2>Tools</h2>
-                <ul id="dev-tools">
-                    <li>React</li>
-                    <li>Firebase</li>
-                    <li>Git</li>
-                    <li>Jest</li>
-                    <li>Enzyme</li>
-                    <li>Yarn</li>
-                    <li>Bootstrap</li>
-                    <li>Reach router</li>
-                    <li>Postman</li>
-                </ul>
+            <div id="tools-flex" class="skill-box">
+                <div id="tools-text-flex" class="text-flex">
+                    <h2>Tools</h2>
+                    <ul id="dev-tools">
+                        <li>React</li>
+                        <li>Firebase</li>
+                        <li>Git</li>
+                        <li>Jest</li>
+                        <li>Enzyme</li>
+                        <li>Yarn</li>
+                        <li>Bootstrap</li>
+                        <li>Reach router</li>
+                        <li>Postman</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div id="skills-flex" class="skill-box">
-            <div id="skills-text-flex" class="text-flex">
-                <h2>Skills</h2>
-                <ul id="other-skills">
-                    <li>OOP</li>
-                    <li>Agile development</li>
-                    <li>Unit testing</li>
-                    <li>Remote working</li>
-                    <li>Authentication</li>
-                    <li>Authorisation</li>
-                    <li>Source control</li>
-                    <li>Rest API</li>
-                </ul>
+            <div id="skills-flex" class="skill-box">
+                <div id="skills-text-flex" class="text-flex">
+                    <h2>Skills</h2>
+                    <ul id="other-skills">
+                        <li>OOP</li>
+                        <li>Agile development</li>
+                        <li>Unit testing</li>
+                        <li>Remote working</li>
+                        <li>Authentication</li>
+                        <li>Authorisation</li>
+                        <li>Source control</li>
+                        <li>Rest API</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <!-- </div> -->
 
         <div id="projects-button" class="bot-mid-button bot-btn-anim light-bg-button">
             <a class="botnav-button" href="#projects" onmouseover="showArrow('2')"
@@ -231,7 +238,7 @@
                                 onmouseout="returnDefault('halls')">
                                 <a class="far fa-folder folder-ico"></a>
                                 <a class="far fa-folder-open folder-open spin-out"
-                                    href="https://hallsofmadness.peterdev.co.uk" target="_blank"></a>
+                                    href="https://hallsofmadness.web.app/" target="_blank"></a>
                             </div>
                         </div>
                         <div class="concepts">
@@ -395,9 +402,9 @@
     </section>
 
     <section id="blog">
-        <h2>Blog</h2>
         <div id="blog-posts">
-            <article onclick="showBlog('finding-my-path', 1)" class="blog-post">
+            <h2>Blog</h2>
+            <article onclick="showBlog('finding-my-path', 0)" class="blog-post">
                 <img src="./images/do-more.jpg" alt="Do more">
                 <div class="blog-header">
                     <h3>Finding My Path</h3>
@@ -409,7 +416,7 @@
                 <div id="finding-my-path" class="modal-box">
                     <div class="blog-header">
                         <h3 class="modal-content">Finding My Path</h3>
-                        <span onclick="closeBlog('finding-my-path')"
+                        <span onclick="closeBlog('finding-my-path', 0)"
                             class="fas fa-times modal-content close-modal"></span>
                     </div>
                     <h4 class="modal-content">10.04.2020</h4>
@@ -458,10 +465,81 @@
                 <p></p>
             </article>
         </div>
+
+        <div class="bot-mid-button bot-btn-anim light-bg-button">
+            <a class="botnav-button" href="#contact" onmouseover="showArrow('4')"
+                onmouseout="removeArrow('4')">Contact</a>
+            <div class="arrow">
+                <span class="arrowspan"></span>
+            </div>
+        </div>
+
     </section>
 
     <section id="contact">
         <h2>Contact Me</h2>
+        <div class="contact-wrapper">
+
+            <div id="contact-flex">
+                <form class="contact-form">
+
+                    <input type="hidden" name="contact_number" />
+
+                    <input type="text" class="form-box" id="name" placeholder="Name" name="user_name" value="">
+
+                    <input type="email" class="form-box" id="email" placeholder="Email" name="user_email" value="">
+
+                    <textarea id="message-box" class="form-box" placeholder="Message" name="message"></textarea>
+
+                    <button onclick="alert('Email Sent!')" class="form-box send-button" id="submit" type="submit"
+                        value="Send">
+                        <div class="button ">
+                            <span class="fas fa-envelope-open-text send-icon"></span>
+                            <span class="send-text">SEND</span>
+                        </div>
+                    </button>
+                </form>
+
+                <div class="contact-details">
+                    <div class="contact-list">
+
+                        <div>
+                            <span class="fa fa-map-marker ">
+                            </span>
+                            <h4>Bristol | UK
+                            </h4>
+                        </div>
+
+
+                        <div>
+                            <span class="fa fa-envelope ">
+                            </span>
+                            <a href="mailto:oguru@hotmail.co.uk" title="Send me an email">oguru@hotmail.co.uk
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- <div id="hallscode" class="icon code-link" onmouseover="spinOut('hallscode')"
+            onmouseout="returnDefault('hallscode')">
+            <a class="fas fa-code code-ico"></a>
+            <a class="fab fa-github-square github-ico spin-out" href="https://github.com/oguru/halls-of-madness"
+            target="_blank"></a>
+            </div> -->
+
+                    <ul class="contact-icons">
+                        <li><a href="https://github.com/oguru/" target="_blank">
+                                <span class="fa fa-github" aria-hidden="true"></span></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/poboyle/" target="_blank">
+                                <span class="fab fa-linkedin" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
     </section>
 </body>
 <!-- <script src="main.js"></script> -->

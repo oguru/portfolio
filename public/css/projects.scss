@@ -9,7 +9,7 @@
     text-align: center;
     background-color: $primary-bg;
     height: 100%;
-    padding-bottom: $base-spacing * 3;
+    min-height: 100vh;
 
     h2 {
       padding: $base-spacing * 3;
@@ -39,8 +39,8 @@
         &:hover {
           margin: $base-spacing * 4 0;
           @include project-box-hover-size;
-          bottom: 3px;
-          right: 3px;
+          // bottom: 3px;
+          // right: 3px;
           box-shadow: 6px 6px 15px 0px #517281;
         }
 
@@ -198,9 +198,22 @@
 
     @media only screen and (min-width: 375px) {
       #projects {
+        // padding: 0 $base-spacing * 4;
         #projects-group {
           .project-parent {
-            margin: $base-spacing * 5 $base-spacing * 5;
+            margin: $base-spacing * 5;
+
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 650px) {
+      #projects {
+        padding: 0;
+        #projects-group {
+          .project-parent {
+            margin: $base-spacing * 5;
 
           }
         }
