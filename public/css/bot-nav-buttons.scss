@@ -10,8 +10,8 @@
     }
 
     #blog-button {
-        margin: 0;
-        padding-bottom: $base-spacing * 3;
+        margin: 15px;
+        // padding-bottom: $base-spacing * 3;
     }
 
     .bot-mid-button.light-bg-button {
@@ -109,14 +109,15 @@
     }
 
     @media only screen and (min-width: 768px) {
-        .bot-mid-button {
+
+
+        .bot-mid-button, #blog-button {
             height: 80px; 
             font-size: 25px;
             margin-bottom: $base-spacing * 7;
             .botnav-button {
                 width: 150px;
                 padding: $base-spacing * 2;
-
             }
         }
         .skills-button {

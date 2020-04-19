@@ -251,6 +251,10 @@
 				animation-direction: reverse
 			}
 
+			.show-blog-btn {
+				animation: show-blog-btn 2s ease-out;	
+			}
+
 			.show-modal-content, .show-modal-content img, p {
 				opacity: 1 !important;
 			}
@@ -284,24 +288,22 @@
 		}
 	}
 
-	@keyframes show-blog-content {
+	@keyframes show-blog-btn {
 		0% {
 			// pointer-events: initial;
 			top: -40px;
 		}
 	
 		30% {
-			top: 10vh;
+			top: 12vh;
 
 		}
 		60% {
-			top: 10vh;
+			top: 12vh;
 		}
 
 		100% {
-			top: 10vh;
-			height: 80vh;
-
+			top: 12vh;
 		}
 	}
 

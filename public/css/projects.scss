@@ -10,6 +10,9 @@
     background-color: $primary-bg;
     height: 100%;
     min-height: 100vh;
+    @include flex-column;
+    justify-content: space-between;
+    // padding-bottom: $base-spacing * 7;
 
     h2 {
       padding: $base-spacing * 3;
@@ -19,11 +22,12 @@
 
     #projects-group {   
       z-index: 10;
-      @include flex-row;
-      justify-content: space-evenly;
-      // align-content: space-between;
-      flex-wrap: wrap;
-      // margin: $base-spacing * 2;
+      // @include flex-row;
+      // justify-content: space-evenly;
+      // flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: $base-spacing * 4;
 
       .project-parent {
         position: relative;
@@ -34,13 +38,15 @@
         bottom: 0;
         right: 0;
         box-shadow: 3px 5px 7px -1px #517281;
-        margin: $base-spacing * 5 0;
+        margin: $base-spacing * 4 $base-spacing * 2;
+        margin-top: 0;
 
         &:hover {
-          margin: $base-spacing * 4 0;
+          margin: $base-spacing *2 0;
+          margin-top: 0;
           @include project-box-hover-size;
-          // bottom: 3px;
-          // right: 3px;
+          bottom: 3px;
+          right: 3px;
           box-shadow: 6px 6px 15px 0px #517281;
         }
 
@@ -104,7 +110,7 @@
               position: relative;
               width: 100%;
               padding-top: $base-spacing * 6;
-              bottom: 160px;
+              bottom: 180px;
 
               h3 {
                 color: $secondary;
@@ -196,27 +202,31 @@
       }  
     }
 
-    @media only screen and (min-width: 375px) {
+    @media only screen and (min-width: 635px) {
       #projects {
-        // padding: 0 $base-spacing * 4;
         #projects-group {
-          .project-parent {
-            margin: $base-spacing * 5;
-
-          }
+          padding: 0 $base-spacing * 3;
+          grid-template-columns: repeat(2, 1fr);
+          // grid-gap: 5%;
         }
       }
     }
-
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 950px) {
       #projects {
-        padding: 0;
         #projects-group {
-          .project-parent {
-            margin: $base-spacing * 5;
-
-          }
+          grid-template-columns: repeat(3, 1fr);
         }
       }
     }
+    // @media only screen and (min-width: 650px) {
+    //   #projects {
+    //     padding: 0;
+    //     #projects-group {
+    //       .project-parent {
+    //         margin: $base-spacing * 5;
+
+    //       }
+    //     }
+    //   }
+    // }
   }

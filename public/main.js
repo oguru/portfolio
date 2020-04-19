@@ -285,6 +285,7 @@ const returnDefault = (iconName) => {
 const getBlog = name => document.getElementById(name);
 const getBlogContent = blog => blog.querySelectorAll(".modal-content");
 const getBlogContainer = () => document.querySelectorAll(".blog-post");
+const getBlogButton = () => document.querySelectorAll(".close-modal")
 
 const showBlog = (name, index) => {
    const blogContainer = getBlogContainer()[index];
@@ -298,7 +299,9 @@ const showBlog = (name, index) => {
       const blogContent = getBlogContent(blog);
       ignorePointer(blogContainer);
       blog.classList.remove("hide-blog");
+      const blogButton = getBlogButton()[index]
 
+      blogButton.classList.add("show-blog-btn")
       blog.classList.add("show-blog");
       for (let i = 0; i < blogContent.length; i++) {
          blogContent[i].classList.add("show-modal-content")
@@ -312,7 +315,7 @@ const closeBlog = (name, index) => {
 
    const blogContainer = getBlogContainer()[index];
 
-   document.getElementsByTagName("body")[0].classList.remove("no-scroll")
+
    const blog = getBlog(name);
    const blogContent = getBlogContent(blog)
 
@@ -325,6 +328,7 @@ const closeBlog = (name, index) => {
    setTimeout(() => {
       resumePointer(blogContainer);
       blog.classList.remove("hide-blog");
+      document.getElementsByTagName("body")[0].classList.remove("no-scroll")
    }, 2000);
 }
 

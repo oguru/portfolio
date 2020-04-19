@@ -1,4 +1,5 @@
 @mixin about {
+
   #about {
     width: 100vw;
     height: 100vh;
@@ -371,7 +372,7 @@
           h3 {
             margin: auto;
             grid-column: 1 / 2;
-            padding: 0 0 $base-spacing * 2 $base-spacing *2;
+            padding: 0;
           }
   
           p {
@@ -395,11 +396,13 @@
         width: 100%;
         padding: 0 $base-spacing * 5 $base-spacing * 5 $base-spacing * 5;
         flex-direction: row;
+        justify-content: space-evenly;
         .skill-box {
           flex-direction: row;
-          max-width: 30%;
+          max-width: 300px;
           height: 100%;
           max-height: 100%;
+          padding: 0 $base-spacing * 2;
           ul {
             width: 100%;
             li {
@@ -490,6 +493,16 @@
         }
       }
   
+    }
+  }
+
+  @media only screen and (min-width: 1106px) {
+    #about {
+      #about-title {
+        p {
+          text-align: center;
+        } 
+      }
     }
   }
 }
