@@ -49,7 +49,6 @@ const navText = document.querySelectorAll(".nav-text");
 const botNav = document.querySelector("#bot-navbar");
 
 const closeNav = () => {
-   // if (viewWidth < 768)
    navBar.classList.remove("nav-hover");
    ignorePointer(navBar);
    setTimeout(() => {
@@ -62,8 +61,6 @@ const clickNavLink = (link) => {
    closeNav();
    setTimeout(() => {
       window.location.assign(`https://peterdev.co.uk/${link}`);
-      // window.location.assign(`http://127.0.0.1:5501/public/index.html${link}`);
-
    }, 1000);
 }
 
@@ -85,9 +82,6 @@ const returnToTop = () => {
    }
 }
 
-
-// let navOpenCheck = false;
-
 const moveNav = () => {
 
    navIcon.classList.add("moveNavIcon");
@@ -98,39 +92,7 @@ const moveNav = () => {
 
    for (let i = 0; i < navText.length; i++) {
       navText[i].classList.add("bottom-zero");
-      // navText[i].classList.add("ignore-mouse");
    }
-
-   // const remIgnoreMouse = () => {
-   //    for (let i = 0; i < navText.length; i++) {
-   //       navText[i].classList.remove("ignore-mouse");
-   //    }
-   // }
-
-   // setTimeout(() => {
-   //    navOpenCheck = true;
-   // }, 500);
-
-   // setTimeout(() => {
-   //    if (navOpenCheck === true) {
-   //       remIgnoreMouse();
-   //    }
-   //    else {
-   //       return
-   //    }
-   // }, 500);
-
-   // console.log(navText[0].classList.contains("nav-open-check"));
-
-
-
-   // navText[0].classList.contains("nav-open-check") ? remIgnoreMouse() : null;
-
-   // setTimeout(() => {
-   //    for (let i = 0; i < navText.length; i++) {
-   //       navText[i].classList.remove("ignore-mouse");
-   //    }
-   // }, 1000);
 }
 
 const returnNav = () => {
@@ -187,6 +149,8 @@ const returnBotNav = () => {
    botNavText.classList.remove("move-bot-nav-txt");
 }
 
+//Project box animations
+
 const projects = document.querySelectorAll(".project-info");
 
 const getProjectIco = (projectId) => document.getElementById(projectId);
@@ -198,8 +162,6 @@ const getProjectConc = () => document.querySelectorAll('.concepts');
 const getProjectOverlay = () => document.querySelectorAll('.project-bg-overlay');
 const getProjectContent = () => document.querySelectorAll('.project-content');
 const getProjectImg = () => document.querySelectorAll('.project-img');
-
-// const addAnimClasses = 
 
 const animateBoxOn = (codeId, projectId, index) => {
    const codeIcon = getCodeIco(codeId);
@@ -245,16 +207,6 @@ const animateBoxOff = (codeId, projectId, index) => {
    const projectContent = getProjectContent()[index];
    const projectImg = getProjectImg()[index];
 
-   // projectBox.classList.remove("box-anim-in");
-   // projectParent.classList.remove("box-anim-in");
-   // projectOverlay.classList.remove("box-anim-in");
-   // projectContent.classList.remove("box-anim-in");
-   // projectImg.classList.remove("box-anim-in");
-   // codeIcon.classList.remove("icon-anim-in");
-   // projectIcon.classList.remove("icon-anim-in");
-   // projectDesc.classList.remove("desc-anim-in");
-   // projectConc.classList.remove("conc-anim-in");
-
    projectBox.classList.add("box-anim-out");
    projectParent.classList.add("box-anim-out");
    projectOverlay.classList.add("box-anim-out");
@@ -268,8 +220,8 @@ const animateBoxOff = (codeId, projectId, index) => {
 
 const spinOut = (iconName) => {
    const hoverState = document.getElementById(iconName).childNodes;
-   hoverState[3].classList.remove("spin-out");
    hoverState[1].classList.remove("return-ico");
+   hoverState[3].classList.remove("spin-out");
    hoverState[1].classList.add("spin-out");
    hoverState[3].classList.add("return-ico");
 }
@@ -277,10 +229,12 @@ const spinOut = (iconName) => {
 const returnDefault = (iconName) => {
    const defaultState = document.getElementById(iconName).childNodes;
    defaultState[1].classList.remove("spin-out");
-   defaultState[1].classList.add("return-ico");
    defaultState[3].classList.remove("return-ico");
+   defaultState[1].classList.add("return-ico");
    defaultState[3].classList.add("spin-out");
 }
+
+//blog animation and functionality
 
 const getBlog = name => document.getElementById(name);
 const getBlogContent = blog => blog.querySelectorAll(".modal-content");
@@ -294,28 +248,22 @@ const showBlog = (name, index) => {
    }
    else {
       document.getElementsByTagName("body")[0].classList.add("no-scroll");
-
       const blog = getBlog(name);
       const blogContent = getBlogContent(blog);
-      ignorePointer(blogContainer);
-      blog.classList.remove("hide-blog");
       const blogButton = getBlogButton()[index]
 
+      ignorePointer(blogContainer);
+      blog.classList.remove("hide-blog");
       blogButton.classList.add("show-blog-btn")
       blog.classList.add("show-blog");
       for (let i = 0; i < blogContent.length; i++) {
          blogContent[i].classList.add("show-modal-content")
       };
-      console.log("showblog");
    }
 }
 
 const closeBlog = (name, index) => {
-   console.log("closeblog");
-
    const blogContainer = getBlogContainer()[index];
-
-
    const blog = getBlog(name);
    const blogContent = getBlogContent(blog)
 
@@ -331,47 +279,3 @@ const closeBlog = (name, index) => {
       document.getElementsByTagName("body")[0].classList.remove("no-scroll")
    }, 2000);
 }
-
-
-
-// // The checker
-// const gambitGalleryIsInView = el => {
-// 	const scroll = window.scrollY || window.pageYOffset
-// 	const boundsTop = el.getBoundingClientRect().top + scroll
-
-// 	const viewport = {
-// 		top: scroll,
-// 		bottom: scroll + window.innerHeight,
-// 	}
-
-//     const bounds = {
-// 		top: boundsTop,
-// 		bottom: boundsTop + el.clientHeight,
-// 	}
-
-// 	return ( bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom ) 
-// 		|| ( bounds.top <= viewport.bottom && bounds.top >= viewport.top );
-// }
-
-
-// // Usage.
-// document.addEventListener( 'DOMContentLoaded', () => {
-// 	const topPoint = document.querySelector( '.left-panel' )
-// 	const about = document.querySelector( '.bot-mid-button' )
-
-// 	const handler = () => raf( () => {
-// 		about.innerHTML = 'Is the div visible? ' + ( gambitGalleryIsInView( topPoint ) ? 'Yes' : 'No' )
-// 	} )
-
-// 	handler()
-// 	window.addEventListener( 'scroll', handler )
-// } )
-
-// // requestAnimationFrame
-// const raf = 
-//     window.requestAnimationFrame ||
-//     window.webkitRequestAnimationFrame ||
-//     window.mozRequestAnimationFrame ||
-//     function( callback ) {
-//         window.setTimeout( callback, 1000 / 60 )
-//     }
