@@ -12,7 +12,6 @@
     min-height: 100vh;
     @include flex-column;
     justify-content: space-between;
-    // padding-bottom: $base-spacing * 7;
 
     h2 {
       padding: $base-spacing * 3;
@@ -22,17 +21,14 @@
 
     #projects-group {   
       z-index: 10;
-      // @include flex-row;
-      // justify-content: space-evenly;
-      // flex-wrap: wrap;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       grid-gap: $base-spacing * 4;
 
       .project-parent {
+        @include project-box-size;
         position: relative;
         border-radius: $border-radius;
-        @include project-box-size;
         overflow: hidden;
         text-align: center;
         bottom: 0;
@@ -42,22 +38,22 @@
         margin-top: 0;
 
         &:hover {
+          @include project-box-hover-size;
           margin: $base-spacing *2 0;
           margin-top: 0;
-          @include project-box-hover-size;
           bottom: 3px;
           right: 3px;
           box-shadow: 6px 6px 15px 0px #517281;
         }
 
         .project-content {
+          @include project-box-size;
           border-radius: $border-radius;
           z-index: 10;
           @include flex-column;
           align-items: center;
           justify-content: space-between;
           overflow: hidden;
-          @include project-box-size;
           opacity: 1;
 
           &:hover {
@@ -69,8 +65,8 @@
           }
 
           .project-bg-overlay {
-            border-radius: $border-radius;
             @include project-box-size;
+            border-radius: $border-radius;
             background: linear-gradient(150deg, rgb(1, 105, 114) 0%, rgb(3, 33, 48) 80%);
             position: absolute;
             z-index: 9;
@@ -105,7 +101,6 @@
             justify-content: space-between;
             @include project-box-size;
 
-            
             .proj-title-desc {
               position: relative;
               width: 100%;
@@ -187,37 +182,34 @@
               }
             }
 
-            &:hover .icons .code-link
-            {
+            &:hover .icons .code-link {
               right: 200px;
             }
 
-            &:hover .icons .project-link 
-            {
+            &:hover .icons .project-link {
               left: 200px;
             }
           }      
         }
-        }
-      }  
-    }
+      }
+    }  
+  }
 
-    @media only screen and (min-width: 635px) {
-      #projects {
-        #projects-group {
-          padding: 0 $base-spacing * 3;
-          grid-template-columns: repeat(2, 1fr);
-          // grid-gap: 5%;
-        }
+  @media only screen and (min-width: 635px) {
+    #projects {
+      #projects-group {
+        padding: 0 $base-spacing * 3;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
-    @media only screen and (min-width: 950px) {
-      #projects {
-        #projects-group {
-          grid-template-columns: repeat(3, 1fr);
-        }
+  }
+  @media only screen and (min-width: 950px) {
+    #projects {
+      #projects-group {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
+  }
     // @media only screen and (min-width: 650px) {
     //   #projects {
     //     padding: 0;

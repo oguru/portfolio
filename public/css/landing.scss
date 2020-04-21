@@ -1,79 +1,71 @@
 @import "./animation.scss";
 
 @mixin landing {
-    #landing {
-        background-image: url("../images/mesa-de-trabajo-3.png");
-        // background-color: black;
-        background-size: cover;
-        background-position: center;
-        @include flex-column;
-        // justify-content: space-between;
-        text-align: center;
-      
-        #landing-main {
-          @include flex-column;
-          height: 90vh;
-          width: 80vw;
-          color: white;
-          // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/landing2.jpg);
-          background-size: cover;
-          background-attachment: fixed;
-          background-position: center;
-          margin: 0 auto;
-      
-          h1 {
-            margin: $base-spacing * 4 0;
-            font-size: 2em;
-          }
-      
-          p {
-            font-size: 1.2em;
-            padding: $base-spacing * 4 $base-spacing * 2;
-          }
-
-          // a {
-          //   @include links;
-          //   width: 50px;
-          //   height: 50px;
-          //   background-color: white;
-          //   padding: 0;
-          //   margin: 15px auto;
-          // }
-        }        
-    }
+  #landing {
+      background-image: url("../images/mesa-de-trabajo-3.png");
+      background-size: cover;
+      background-position: center;
+      @include flex-column;
+      text-align: center;
     
-@media only screen and (min-width: 768px) {
+      #landing-main {
+        @include flex-column;
+        height: 90vh;
+        width: 80vw;
+        color: white;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        margin: 0 auto;
 
-  #landing {
-    #landing-main {
-      h1 {
-        @include h1;
-      }
+        h1 {
+          margin: $base-spacing * 4 0;
+          font-size: 2em;
+        }
+    
+        p {
+          font-size: 1.2em;
+          padding: $base-spacing * 4 $base-spacing * 2;
+        }
 
-      p {
-        font-size: 1.5em;
+        img {
+          width: 200px;
+        }
+      }        
+  }
+    
+  @media only screen and (min-width: 768px) {
+
+    #landing {
+      #landing-main {
+        h1 {
+          @include h1;
+        }
+
+        p {
+          font-size: 1.5em;
+        }
       }
     }
   }
-}
 
-@media only screen and (min-width: 1440px) {
-  #landing {
-    #landing-main {
-      h1 {
-        @include h1;
-        font-size: 3em;
-      }
+  @media only screen and (min-width: 1440px) {
+    #landing {
+      #landing-main {
+        h1 {
+          @include h1;
+          font-size: 3em;
+        }
 
-      p {
-        font-size: 2em;
-      }
+        p {
+          font-size: 2em;
+        }
 
-      a {
-        width: 100px;
-        height: 100px;
+        a {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
   }
-}
 }

@@ -11,7 +11,6 @@
 
     #blog-button {
         margin: 15px;
-        // padding-bottom: $base-spacing * 3;
     }
 
     .bot-mid-button.light-bg-button {
@@ -30,20 +29,16 @@
                 background: $secondary;
                 padding: $base-spacing * 2;
                 box-shadow: 0 2px 7px 0 rgb(184, 190, 180);
-              }
+            }
         }
     }
 
     .bot-mid-button {
-        // margin: $base-spacing * 2 auto $base-spacing * 7 auto;
-        // padding-bottom: 5vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        // height: 55px;
         min-height: 10vh; 
-        // padding-bottom: $base-spacing * 4;     
         margin-bottom: $base-spacing * 2;
     
         .botnav-button {
@@ -59,27 +54,23 @@
             transition: 0.5s;
             padding: $base-spacing * 1.5;
             bottom: 0;
-            // margin-bottom: $base-spacing * 2;
     
-          &:hover {
-            color: $primary;
-            background: $secondary;
-            box-shadow: 0 0 0 0;
+            &:hover {
+                color: $primary;
+                background: $secondary;
+                box-shadow: 0 0 0 0;
             }
         }
       }
           
     .arrow{
-    // margin: 0 auto;
-    position: relative;
-    left: 2px;
-    // padding: $base-spacing * 2 0 0 0;
+        position: relative;
+        left: 2px;
 
         .borderClass {
             border-bottom: 4px solid $primary;
             border-right: 4px solid $primary;
             animation: arrow 2s infinite;
-
             @include arrow-animation
         }
 
@@ -109,12 +100,11 @@
     }
 
     @media only screen and (min-width: 768px) {
-
-
         .bot-mid-button, #blog-button {
             height: 80px; 
             font-size: 25px;
             margin-bottom: $base-spacing * 7;
+            
             .botnav-button {
                 width: 150px;
                 padding: $base-spacing * 2;

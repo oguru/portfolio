@@ -120,17 +120,6 @@
 		@include rotation;
 
 		#circle1 {
-			width: 300px;
-			height: 300px;
-			border-top: white 2px solid;
-			border-radius: 100%;
-			margin: auto;
-			position: absolute;
-			animation: rotation 3s infinite linear;
-			animation-direction: reverse;
-		}
-
-		#circle2 {
 			width: 30vw;
 			height: 30vw;
 			border-top: white 2px solid;
@@ -140,7 +129,7 @@
 			animation: rotation 6s infinite linear;
 		}
 
-		#circle3 {
+		#circle2 {
 			width: 55vw;
 			height: 55vw;
 			border-top: white 2px solid;
@@ -151,7 +140,7 @@
 			animation-direction: reverse;
 		}
 
-		#circle4 {
+		#circle3 {
 			width: 80vw;
 			height: 80vw;
 			border-top: white 2px solid;
@@ -306,7 +295,6 @@
 			top: 12vh;
 		}
 	}
-
 }
 
 
