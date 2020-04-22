@@ -12,6 +12,7 @@ I applied myself to give as much attention to detail as possible and make the si
   * Change movement animation from position to transform: translate.
 * Implement animations in more places.
 * Make site more accessible for screen readers.
+* Improve layout of the projects and blog pages.
 * Implement pull down nav on mobile rather than click.
 
 ## Setup
