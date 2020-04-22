@@ -29,7 +29,7 @@
         }
 
         img {
-          width: 200px;
+          width: 180px;
         }
       }        
   }
@@ -40,6 +40,10 @@
       #landing-main {
         h1 {
           @include h1;
+        }
+
+        img {
+          width: 150px;
         }
 
         p {
@@ -55,6 +59,10 @@
         h1 {
           @include h1;
           font-size: 3em;
+        }
+
+        img {
+          width: 200px;
         }
 
         p {
