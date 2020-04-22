@@ -22,14 +22,19 @@
 </head>
 
 <body onresize="setViewWidth()">
-
-    <nav id="nav-btn-anim" class="nav-hover" onmouseover="moveNav()" onmouseout="returnNav()">
+    <!-- ontouchcancel="returnNav()" -->
+    <!-- ontouchstart="moveNav()" -->
+    <!-- ontouchstart="moveNav()" -->
+    <nav id="nav-btn-anim" 
+    onmouseover="moveNav()"
+    onmouseout="returnNav()"
+    >
         <span id="mob-top-btn" class="nav-text nav-span fas fa-home" onclick="returnToTop()"></span>
         <a onclick="clickNavLink('#about')" class="nav-text">About</a>
         <a onclick="clickNavLink('#projects')" class="nav-text">Projects</a>
         <a onclick="clickNavLink('#blog')" class="nav-text">Blog</a>
         <a onclick="clickNavLink('#contact')" class="nav-text" id="contact-button">Contact</a>
-        <span id="mob-close-nav" class="nav-text nav-span fas fa-times" onclick="closeNav()"></span>
+        <span id="mob-close-nav" class="nav-text nav-span fas fa-times" onclick="returnNav()"></span>
         <div id="nav-icon">
             <span id="nav-line-1" class="nav-line"></span>
             <span id="nav-line-2" class="nav-line"></span>

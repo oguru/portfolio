@@ -16,6 +16,8 @@ const ignorePointer = (ele, index) => {
    }
    else {
       ele.classList.add("ignore-mouse");
+      console.log("ignore");
+      
    }
 };
 
@@ -25,6 +27,7 @@ const resumePointer = (ele, index) => {
    }
    else {
       ele.classList.remove("ignore-mouse");
+      console.log(ele, "resume");
    }
 };
 
@@ -49,53 +52,29 @@ const navText = document.querySelectorAll(".nav-text");
 const botNav = document.querySelector("#bot-navbar");
 
 const closeNav = () => {
-   navBar.classList.remove("nav-hover");
-   ignorePointer(navBar);
-   setTimeout(() => {
-      resumePointer(navBar);
-      navBar.classList.add("nav-hover");
-   }, 1000)
-}
-
-const clickNavLink = (link) => {
-   closeNav();
-   setTimeout(() => {
-      window.location.assign(`https://peterdev.co.uk/${link}`);
-   }, 1000);
-}
-
-const returnToTop = () => {
-   ignorePointer(botNav);
-   ignorePointer(navBar);
-   closeNav();
-   setTimeout(() => {
-      resumePointer(navBar);
-      resumePointer(botNav);
-   }, 1000)
-
-   returnBotNav();
-   if (viewWidth < 768) {
-      setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }), 1000);
-   }
-   else {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-   }
-}
-
-const moveNav = () => {
-
-   navIcon.classList.add("moveNavIcon");
-
-   for (let i = 0; i < 3; i++) {
-      navLines[i].classList.add("navLineAnimate");
-   }
-
    for (let i = 0; i < navText.length; i++) {
-      navText[i].classList.add("bottom-zero");
+      navText[i].classList.remove("bottom-zero");
    }
+   navText.forEach(link => ignorePointer(link))
+   navBar.classList.remove("nav-hover");
+
+   setTimeout(() => {
+      navText.forEach(link => resumePointer(link))
+      resumePointer(navBar);
+   }, 1000)
 }
 
 const returnNav = () => {
+
+   for (let i = 0; i < navText.length; i++) {
+      navText[i].classList.remove("bottom-zero");
+   }
+   navBar.classList.remove("nav-hover");
+   
+   navIcon.classList.remove("moveNavIcon");
+   for (let i = 0; i < 3; i++) {
+      navLines[i].classList.remove("navLineAnimate")
+   }
 
    if (viewWidth < 768) {
       navBar.classList.add("nav-delay");
@@ -110,16 +89,67 @@ const returnNav = () => {
       navBar.classList.remove("nav-delay");
       navIcon.classList.remove("nav-delay");
    }
+}
 
-   navIcon.classList.remove("moveNavIcon");
+const urlAddress = window.location.href;
+
+const clickNavLink = (elementId) => {
+   ignorePointer(navBar);
+   navText.forEach(link => ignorePointer(link))
+   returnNav();
+   setTimeout(() => {
+      urlAddress.includes("peterdev") ? (
+      window.location.assign(`https://peterdev.co.uk/${elementId}`)
+      ) : (
+      window.location.assign(`http://127.0.0.1:5501/public/index.html${elementId}`));
+         navText.forEach(link => resumePointer(link))
+         resumePointer(navBar);
+
+   }, 1000);
+}
+
+const returnToTop = () => {
+   ignorePointer(botNav);
+   ignorePointer(navBar);
+   returnNav();
+   setTimeout(() => {
+      resumePointer(navBar);
+      resumePointer(botNav);
+   }, 1000)
+
+   returnBotNav();
+   if (viewWidth < 768) {
+      setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }), 1000);
+   }
+   else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+   }
+}
+
+
+const moveNav = () => {
+   
+   navBar.classList.remove("nav-hover");
+
+   navBar.classList.add("nav-hover");
+   navIcon.classList.add("moveNavIcon");
+
    for (let i = 0; i < 3; i++) {
-      navLines[i].classList.remove("navLineAnimate")
+      navLines[i].classList.add("navLineAnimate");
    }
 
    for (let i = 0; i < navText.length; i++) {
-      navText[i].classList.remove("bottom-zero");
+      navText[i].classList.add("bottom-zero");
    }
+
 }
+
+// navBar.addEventListener("mouseover", alert("ggd"));
+// navBar.addEventListener("onmouseover", () => moveNav());
+// navBar.addEventListener("mouseout", returnNav());
+// navBar.addEventListener("touchstart", moveNav());
+// navBar.addEventListener("mouseout", returnNav());
+
 
 const setViewWidth = () => {
    viewWidth = document.getElementsByTagName("body")[0].clientWidth;

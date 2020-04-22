@@ -149,7 +149,7 @@
                         @include flex-row;
                         pointer-events: auto;
                         position: relative;
-                        font-size: 2.3rem;
+                        font-size: 30px;
                         text-align: center;
                         width: 100%;
                         color: white;
@@ -157,20 +157,20 @@
                         
                     .contact-icons li a {
                         pointer-events: auto;
-                        color: #fff;
+                        color: black;
                     }
                         
                     .contact-icons li {
                         position: relative;
                         top: 0;
                         display: inline-block;
-                        height: 70px;
-                        width: 70px;
-                        margin: 10px auto;
-                        line-height: 70px;
+                        height: 45px;
+                        width: 45px;
+                        margin: 10px 10vw;
+                        line-height: 45px;
                         border-radius: 50%;
                         color: #fff;
-                        background-color: black;
+                        background-color: #fff;
                         cursor: pointer;
                         transition: all .2s ease-in-out;
                     }
@@ -180,9 +180,9 @@
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width: 70px;
-                        height: 70px;
-                        line-height: 70px;
+                        width: 45px;
+                        height: 45px;
+                        line-height: 45px;
                         border-radius: 50%;
                         opacity: 0;
                         box-shadow: 0 0 0 1px $secondary;
@@ -190,7 +190,7 @@
                     }
                         
                     .contact-icons li:hover {
-                        background-color: white;
+                        background-color: black;
                     }
                         
                     .contact-icons li:hover:after {
@@ -200,7 +200,7 @@
                     }
                         
                     .contact-icons li:hover a {
-                        color: black;
+                        color: white;
                     }
                 }
             }
@@ -225,7 +225,12 @@
             }
         }
     }
-    
+
+    @media only screen and (min-width: 768px) {
+        #contact .contact-wrapper #contact-flex .contact-details .contact-icons li {
+            margin: 10px 60px;
+        }
+    }
 }
 
     

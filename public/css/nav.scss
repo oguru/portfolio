@@ -38,7 +38,7 @@
     transition: 0.7s ease-in 0.15s;
   }
 
-  .nav-hover:hover {
+  .nav-hover {
       height: 100vh;
       padding: 15vh 0;
       top: 0;
@@ -73,9 +73,10 @@
       width: 35px;
       height: 35px;
 
-      &:hover {
-        transition-duration: 0.3s;
-      }
+      // &:hover {
+      //   transition: text-shadow 0.3s;
+      //   text-shadow: 0 0 1px $secondary;
+      // }
     }
 
     a {
@@ -136,7 +137,7 @@
       }
     }
 
-    .nav-hover:hover {
+    .nav-hover {
         top: 0;
         clip-path: ellipse(100% 100% at 50% 1%);
         height: 70px;
