@@ -95,25 +95,43 @@
                     max-width: 800px;
                     width: 100%;
                     margin-top: $base-spacing * 2;
+                    @include flex-column;
 
                     .contact-list {
-                        padding: $base-spacing * 2 0;
+                        margin: $base-spacing 0;
                         width: 100%;
-                        @include flex-column;
+                        @include flex-row;
+                        justify-content: space-between;
+
+                        #location {
+                            flex-direction: row-reverse;
+
+                            span {
+                                margin: 0 $base-spacing 0 $base-spacing * 2;
+                            }
+                        }
 
                         div {
                             width: 100%;
                             @include flex-row;
                             justify-content: flex-start;
                             align-items: center;
-                            margin-bottom: $base-spacing * 2;
+                            margin-bottom: $base-spacing * 4;
+
+                            .cv-link {
+                                color: $primary-lighter;
+                                transition: 0.3s;
+
+                                &:hover {
+                                    color: $primary;
+                                }
+                            }
 
                             h4, a {
                                 font-weight: normal;
-                                font-size: 16px;
+                                font-size: 14px;
                                 text-decoration: none;
                                 color: white;
-
                             }
 
                             a {
@@ -122,10 +140,10 @@
 
                             span {
                                 color: white;
-                                font-size: 35px;
-                                width: 50px;
+                                font-size: 28px;
+                                width: 30px;
                                 text-align: center;
-                                margin-right: $base-spacing * 6;
+                                margin: 0 $base-spacing * 2 0 $base-spacing;
 
                             }
                         }
@@ -147,60 +165,65 @@
 
                     .contact-icons {
                         @include flex-row;
+                        justify-content: space-evenly;
+                        align-items: flex-end;
                         pointer-events: auto;
                         position: relative;
-                        font-size: 30px;
+                        font-size: 25px;
                         text-align: center;
                         width: 100%;
+                        height: 100%;
                         color: white;
-                    }
-                        
-                    .contact-icons li a {
-                        pointer-events: auto;
-                        color: black;
-                    }
-                        
-                    .contact-icons li {
-                        position: relative;
-                        top: 0;
-                        display: inline-block;
-                        height: 45px;
-                        width: 45px;
-                        margin: 10px 10vw;
-                        line-height: 45px;
-                        border-radius: 50%;
-                        color: #fff;
-                        background-color: #fff;
-                        cursor: pointer;
-                        transition: all .2s ease-in-out;
-                    }
-                        
-                    .contact-icons li:after {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 45px;
-                        height: 45px;
-                        line-height: 45px;
-                        border-radius: 50%;
-                        opacity: 0;
-                        box-shadow: 0 0 0 1px $secondary;
-                        transition: all .2s ease-in-out;
-                    }
-                        
-                    .contact-icons li:hover {
-                        background-color: black;
-                    }
-                        
-                    .contact-icons li:hover:after {
-                        opacity: 1;
-                        transform: scale(1.12);
-                        transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
-                    }
-                        
-                    .contact-icons li:hover a {
-                        color: white;
+                        padding-top: $base-spacing;
+                        padding-bottom: $base-spacing *5;
+
+                        li {
+                            position: relative;
+                            top: 0;
+                            display: inline-block;
+                            height: 40px;
+                            width: 40px;
+                            line-height: 40px;
+                            // margin: 0 5vw;
+                            border-radius: 50%;
+                            color: #fff;
+                            background-color: #fff;
+                            cursor: pointer;
+                            transition: all .2s ease-in-out;
+
+                            &:hover {
+                                background-color: black;
+                            }
+    
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 40px;
+                                height: 40px;
+                                line-height: 40px;
+                                border-radius: 50%;
+                                opacity: 0;
+                                box-shadow: 0 0 0 1px $secondary;
+                                transition: all .2s ease-in-out;
+                            }
+
+                            &:hover:after {
+                                opacity: 1;
+                                transform: scale(1.12);
+                                transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);        
+                            }
+
+                            a {
+                                pointer-events: auto;
+                                color: black;
+                            }
+
+                            &:hover a {
+                                color: white;
+                            }
+                        }
                     }
                 }
             }
@@ -220,6 +243,54 @@
                     }
                     .form-box {
                         margin-bottom:  $base-spacing * 4;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 425px) {
+        #contact {
+            .contact-wrapper {
+                #contact-flex {
+                    .contact-details {
+                        .contact-list { 
+
+                            #location {
+                                span {
+                                    margin: 0 $base-spacing * 2 0 $base-spacing * 4;
+                                }
+                            }
+
+                            div { 
+                                span {
+                                    font-size: 35px;
+                                    margin: 0 $base-spacing * 4 0 $base-spacing * 2;
+                                    width: 50px;
+                                }
+
+                                h4, a {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+
+                        .contact-icons {
+                            padding-bottom: $base-spacing *3;
+                            font-size: 30px;
+
+                            li {
+                                height: 45px;
+                                width: 45px;
+                                line-height: 45px;
+                                
+                                &:after {
+                                    width: 45px;
+                                    height: 45px;
+                                    line-height: 45px;
+                                }
+                            }
+                        }
                     }
                 }
             }
