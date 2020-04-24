@@ -309,3 +309,15 @@ const closeBlog = (name, index) => {
       document.getElementsByTagName("body")[0].classList.remove("no-scroll")
    }, 2000);
 }
+
+//contact section
+
+const cvIcon = document.getElementsByClassName("cv-cont")[0];
+
+const hoverCvIcon = () => {
+   cvIcon.classList.add("hover-cv-icon");
+}
+
+const unhoverCvIcon = () => {
+   cvIcon.classList.remove("hover-cv-icon");
+}

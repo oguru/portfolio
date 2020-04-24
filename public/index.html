@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
     <title>Peter O'Boyle</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
     <script src="https://kit.fontawesome.com/ad20ab186e.js" crossorigin="anonymous"></script>
     <script src="./main.js" async defer></script>
@@ -492,20 +491,6 @@
                     </button>
                 </form>
                 <div class="contact-details">
-                    <div class="contact-list">
-                        <div id="location">
-                            <span class="fa fa-map-marker ">
-                            </span>
-                            <h4>Bristol | UK
-                            </h4>
-                        </div>
-                        <div>
-                            <span class="far fa-file-pdf">
-                            </span>
-                            <a class="cv-link" href="./assets/Peter OBoyle CV.pdf" target="_blank" title="download my CV">View CV
-                            </a>
-                        </div>
-                    </div>
                     <ul class="contact-icons">
                         <li>
                             <a href="https://github.com/oguru/" target="_blank">
@@ -515,6 +500,11 @@
                         <li>
                             <a href="https://www.linkedin.com/in/poboyle/" target="_blank">
                                 <span class="fab fa-linkedin" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                        <li class="cv-cont" onmouseover="hoverCvIcon()" onmouseout="unhoverCvIcon()">
+                            <a class="cv-link" href="./assets/Peter OBoyle CV.pdf" target="_blank">
+                                <span class="cv-text" aria-hidden="true">cv</span>
                             </a>
                         </li>
                     </ul>

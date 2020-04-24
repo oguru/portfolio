@@ -97,72 +97,6 @@
                     margin-top: $base-spacing * 2;
                     @include flex-column;
 
-                    .contact-list {
-                        margin: $base-spacing 0;
-                        width: 100%;
-                        @include flex-row;
-                        justify-content: space-between;
-
-                        #location {
-                            flex-direction: row-reverse;
-
-                            span {
-                                margin: 0 $base-spacing 0 $base-spacing * 2;
-                            }
-                        }
-
-                        div {
-                            width: 100%;
-                            @include flex-row;
-                            justify-content: flex-start;
-                            align-items: center;
-                            margin-bottom: $base-spacing * 4;
-
-                            .cv-link {
-                                color: $primary-lighter;
-                                transition: 0.3s;
-
-                                &:hover {
-                                    color: $primary;
-                                }
-                            }
-
-                            h4, a {
-                                font-weight: normal;
-                                font-size: 14px;
-                                text-decoration: none;
-                                color: white;
-                            }
-
-                            a {
-                                pointer-events: auto;
-                            }
-
-                            span {
-                                color: white;
-                                font-size: 28px;
-                                width: 30px;
-                                text-align: center;
-                                margin: 0 $base-spacing * 2 0 $base-spacing;
-
-                            }
-                        }
-
-                        .list-item {
-                            line-height: 4;
-                            color: #aaa;
-
-                            .contact-text a {
-                                pointer-events: auto;
-                            }
-                                
-                            &:hover {
-                                color: #fff;
-                                text-decoration: none;
-                            }
-                        }
-                    }
-
                     .contact-icons {
                         @include flex-row;
                         justify-content: space-evenly;
@@ -176,6 +110,40 @@
                         color: white;
                         padding-top: $base-spacing;
                         padding-bottom: $base-spacing *5;
+
+                        .cv-cont {
+                            @include flex-column;
+
+                            .cv-link {
+                                @include flex-column;
+                                width: 28px;
+                                height: 28px;
+                                background-color: black;
+                                border-radius: 100%;
+                                text-decoration: none;
+
+                                .cv-text {
+                                    background-color: transparent;
+                                    @include flex-column;
+                                    font-size: 20px;
+                                    color: white;
+                                    font-weight: 700;
+                                    width: 28px;
+                                }
+                            }
+                        }
+
+                        .hover-cv-icon {
+                            background-color: black;
+
+                            .cv-link {
+                                background-color: white;
+
+                                .cv-text {
+                                    color: black;
+                                }
+                            }
+                        }
 
                         li {
                             position: relative;
@@ -217,6 +185,7 @@
                             a {
                                 pointer-events: auto;
                                 color: black;
+                                margin: auto;
                             }
 
                             &:hover a {
@@ -253,30 +222,19 @@
             .contact-wrapper {
                 #contact-flex {
                     .contact-details {
-                        .contact-list { 
-
-                            #location {
-                                span {
-                                    margin: 0 $base-spacing * 2 0 $base-spacing * 4;
-                                }
-                            }
-
-                            div { 
-                                span {
-                                    font-size: 35px;
-                                    margin: 0 $base-spacing * 4 0 $base-spacing * 2;
-                                    width: 50px;
-                                }
-
-                                h4, a {
-                                    font-size: 16px;
-                                }
-                            }
-                        }
-
                         .contact-icons {
                             padding-bottom: $base-spacing *3;
                             font-size: 30px;
+
+                            .cv-cont {
+                                .cv-link {
+                                    width: 32px;
+                                    height: 32px;
+                                    .cv-text {
+                                        font-size: 23px;
+                                    }
+                                }
+                            }
 
                             li {
                                 height: 45px;
@@ -293,12 +251,6 @@
                     }
                 }
             }
-        }
-    }
-
-    @media only screen and (min-width: 768px) {
-        #contact .contact-wrapper #contact-flex .contact-details .contact-icons li {
-            margin: 10px 60px;
         }
     }
 }
