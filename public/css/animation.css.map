@@ -1,1 +1,11 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"animation.css"}
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "animation.scss",
+        "palette.scss",
+        "variables.scss"
+    ],
+    "names": [],
+    "file": "animation.css"
+}

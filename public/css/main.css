@@ -1313,10 +1313,11 @@ nav .bottom-zero {
 }
 #blog #blog-posts {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 #blog #blog-posts .blog-post {
   z-index: 80;
@@ -1325,9 +1326,11 @@ nav .bottom-zero {
   box-shadow: 0 0 12px 2px lightgrey;
   text-align: center;
   width: 280px;
+  height: 360px;
   background-color: #f6faf4;
   transition: 0.3s ease-in-out;
   pointer-events: initial;
+  margin: 10px;
 }
 #blog #blog-posts .blog-post.ignore-mouse {
   pointer-events: none;

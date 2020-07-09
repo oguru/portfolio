@@ -17,8 +17,10 @@
         }
 
         #blog-posts {
-            @include flex-column;
-            justify-content: space-between;
+            @include flex-row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
 
             .blog-post {
                 z-index: 80;
@@ -27,9 +29,11 @@
                 box-shadow: 0 0 12px 2px lightgrey;
                 text-align: center;
                 width: 280px;
+                height: 360px;
                 background-color: $light-bg;
                 transition: 0.3s ease-in-out;
                 pointer-events: initial;
+                margin: $base-spacing * 2;
 
                 &.ignore-mouse {
                     pointer-events: none;
