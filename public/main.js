@@ -27,7 +27,7 @@ const resumePointer = (ele, index) => {
    }
    else {
       ele.classList.remove("ignore-mouse");
-      console.log(ele, "resume");
+      // console.log(ele, "resume");
    }
 };
 
@@ -36,10 +36,10 @@ const resumePointer = (ele, index) => {
 
 const arrows = document.getElementsByClassName("arrowspan");
 
-showArrow = (index) => {
+const showArrow = (index) => {
    arrows[index].classList.add("borderClass");
 }
-removeArrow = (index) => {
+const removeArrow = (index) => {
    arrows[index].classList.remove("borderClass");
 }
 
@@ -51,67 +51,113 @@ const navLines = document.querySelectorAll(".nav-line");
 const navText = document.querySelectorAll(".nav-text");
 const botNav = document.querySelector("#bot-navbar");
 
-const closeNav = () => {
-   for (let i = 0; i < navText.length; i++) {
-      navText[i].classList.remove("bottom-zero");
-   }
-   navText.forEach(link => ignorePointer(link))
-   navBar.classList.remove("nav-hover");
+// const closeNav = () => {
+//    for (let i = 0; i < navText.length; i++) {
+//       navText[i].classList.remove("bottom-zero");
+//    }
+//    navText.forEach(link => ignorePointer(link))
+//    navBar.classList.remove("nav-hover");
 
-   setTimeout(() => {
-      navText.forEach(link => resumePointer(link))
-      resumePointer(navBar);
-   }, 1000)
-}
+//    setTimeout(() => {
+//       navText.forEach(link => resumePointer(link))
+//       resumePointer(navBar);
+//    }, 1000)
+// }
 
-const returnNav = () => {
-
-   for (let i = 0; i < navText.length; i++) {
-      navText[i].classList.remove("bottom-zero");
-   }
-   navBar.classList.remove("nav-hover");
+const returnNav = (event) => {
    
+   event ? event.stopPropagation() : ""
+   
+   if (viewWidth > 768) {
+
+      // document.getElementById(input).blur();
+      
+      for (let i = 0; i < navText.length; i++) {
+         navText[i].classList.remove("bottom-zero");
+      }
+      
+      navBar.classList.remove("nav-hover");
+      navIcon.classList.remove("moveNavIcon");
+
+      for (let i = 0; i < 3; i++) {
+         navLines[i].classList.remove("navLineAnimate")
+      }
+
+   }
+   // else if (input === 'mob-close-nav') {
+      
+   //    for (let i = 0; i < navText.length; i++) {
+   //       navText[i].classList.remove("bottom-zero");
+   //    }
+      
+   //    navBar.classList.remove("nav-hover");
+   //    navIcon.classList.remove("moveNavIcon");
+
+   //    for (let i = 0; i < 3; i++) {
+   //       navLines[i].classList.remove("navLineAnimate")
+   //    }
+
+   // }
+         // if (input === 'mob-close-nav') {
+         //    navBar.classList.add("nav-delay");
+         //    navIcon.classList.add("nav-delay");
+         //    setTimeout(() => {
+         //       navBar.classList.remove("nav-delay");
+         //       navIcon.classList.remove("nav-delay");
+         //    }, 500);
+         // }
+      
+         // else {
+            navBar.classList.remove("nav-delay");
+            navIcon.classList.remove("nav-delay");
+         // }
+}
+const returnNavMob = (event) => {
+
+   event ? event.stopPropagation() : ""
+
+   for (let i = 0; i < navText.length; i++) {
+      navText[i].classList.remove("bottom-zero");
+   }
+   
+   navBar.classList.remove("nav-hover");
    navIcon.classList.remove("moveNavIcon");
+
    for (let i = 0; i < 3; i++) {
       navLines[i].classList.remove("navLineAnimate")
    }
 
-   if (viewWidth < 768) {
-      navBar.classList.add("nav-delay");
-      navIcon.classList.add("nav-delay");
-      setTimeout(() => {
-         navBar.classList.remove("nav-delay");
-         navIcon.classList.remove("nav-delay");
-      }, 500);
-   }
-
-   else {
+   navBar.classList.add("nav-delay");
+   navIcon.classList.add("nav-delay");
+   setTimeout(() => {
       navBar.classList.remove("nav-delay");
       navIcon.classList.remove("nav-delay");
-   }
+   }, 500);
 }
+
 
 const urlAddress = window.location.href;
 
-const clickNavLink = (elementId) => {
+const clickNavLink = (event, elementId) => {
+   event.stopPropagation()
    ignorePointer(navBar);
    navText.forEach(link => ignorePointer(link))
-   returnNav();
+   returnNavMob();
    setTimeout(() => {
       urlAddress.includes("peterdev") ? (
-      window.location.assign(`https://peterdev.co.uk/${elementId}`)
+      window.location.assign(`https://peterdev.co.uk/#${elementId}`)
       ) : (
-      window.location.assign(`http://127.0.0.1:5501/public/index.html${elementId}`));
+      window.location.assign(`http://127.0.0.1:5501/public/index.html#${elementId}`));
          navText.forEach(link => resumePointer(link))
          resumePointer(navBar);
-
    }, 1000);
 }
 
-const returnToTop = () => {
+const returnToTop = (event) => {
+   event.stopPropagation();
    ignorePointer(botNav);
    ignorePointer(navBar);
-   returnNav();
+   returnNavMob();
    setTimeout(() => {
       resumePointer(navBar);
       resumePointer(botNav);
@@ -126,30 +172,46 @@ const returnToTop = () => {
    }
 }
 
+const moveNav = (input) => {
 
-const moveNav = () => {
-   
-   navBar.classList.remove("nav-hover");
-
-   navBar.classList.add("nav-hover");
-   navIcon.classList.add("moveNavIcon");
-
-   for (let i = 0; i < 3; i++) {
-      navLines[i].classList.add("navLineAnimate");
+   if (input === "mouse" && viewWidth < 768) {
+      return
    }
+   else {
+   // if (viewWidth > 768) {
+      
+      // navBar.classList.remove("nav-hover");
+      navBar.classList.add("nav-hover");
+      navIcon.classList.add("moveNavIcon");
 
-   for (let i = 0; i < navText.length; i++) {
-      navText[i].classList.add("bottom-zero");
+      for (let i = 0; i < 3; i++) {
+         navLines[i].classList.add("navLineAnimate");
+      }
+
+      for (let i = 0; i < navText.length; i++) {
+         navText[i].classList.add("bottom-zero");
+      }
+   // }
    }
-
 }
 
-// navBar.addEventListener("mouseover", alert("ggd"));
-// navBar.addEventListener("onmouseover", () => moveNav());
-// navBar.addEventListener("mouseout", returnNav());
-// navBar.addEventListener("touchstart", moveNav());
-// navBar.addEventListener("mouseout", returnNav());
+// const moveNavMob = () => {
+   
+//    if (viewWidth < 768) {
+      
+//       navBar.classList.remove("nav-hover");
+//       navBar.classList.add("nav-hover");
+//       navIcon.classList.add("moveNavIcon");
 
+//       for (let i = 0; i < 3; i++) {
+//          navLines[i].classList.add("navLineAnimate");
+//       }
+
+//       for (let i = 0; i < navText.length; i++) {
+//          navText[i].classList.add("bottom-zero");
+//       }
+//    }
+// }
 
 const setViewWidth = () => {
    viewWidth = document.getElementsByTagName("body")[0].clientWidth;

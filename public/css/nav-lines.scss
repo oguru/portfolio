@@ -7,6 +7,7 @@
         transition: 0.5s;
         @include flex-column;
         justify-content: space-between;
+        pointer-events: none;
 
         span {
             z-index: 100;

@@ -1,12 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "nav-lines.scss",
-        "animation.scss",
-        "palette.scss",
-        "variables.scss"
-    ],
-    "names": [],
-    "file": "nav-lines.css"
-}
+{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"nav-lines.css"}
