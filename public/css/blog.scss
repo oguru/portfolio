@@ -23,6 +23,7 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            margin: $base-spacing * 4 0;
 
             .blog-post {
                 // z-index: 80;
@@ -35,7 +36,7 @@
                 background-color: $light-bg;
                 transition: 0.3s ease-in-out;
                 pointer-events: initial;
-                margin: $base-spacing * 2 $base-spacing * 4;
+                margin: $base-spacing * 2;
 
                 &.ignore-mouse {
                     pointer-events: none;

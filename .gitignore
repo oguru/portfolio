@@ -2,3 +2,4 @@ node_modules
 yarn.lock
 .firebaserc
 .firebase.json
+notes.txt

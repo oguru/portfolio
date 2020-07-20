@@ -193,9 +193,42 @@
                 <div class="project-content">
                     <div class="project-bg-overlay">
                     </div>
+                    <img class="project-img" src="./images/notflix.png" alt="Notflix">
+                    <div class="project-info" onmouseover="animateBoxOn('notflixcode', 'notflix', 0)"
+                        onmouseout="animateBoxOff('notflixcode', 'notflix', 0)">
+                        <div class="proj-title-desc">
+                            <h3>Notflix</h3>
+                            <p>An app I built with functionality to query the OMDb API for information on movies and TV shows, then display them to the user.</p>
+                        </div>
+                        <div id="notflix-icons" class="icons">
+                            <div id="notflixcode" class="icon code-link" onmouseover="spinOut('notflixcode')"
+                                onmouseout="returnDefault('notflixcode')">
+                                <a class="fas fa-code code-ico"></a>
+                                <a class="fab fa-github-square github-ico spin-out"
+                                    href="https://github.com/oguru/notflix" target="_blank"></a>
+                            </div>
+                            <div id="notflix" class="icon project-link" onmouseover="spinOut('notflix')"
+                                onmouseout="returnDefault('notflix')">
+                                <a class="far fa-folder folder-ico"></a>
+                                <a class="far fa-folder-open folder-open spin-out"
+                                    href="https://notflix.peterdev.co.uk/" target="_blank"></a>
+                            </div>
+                        </div>
+                        <div class="concepts">
+                            <p>UI - UX</p>
+                            <p>React - REST API</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-parent">
+                <div class="project-content">
+                    <div class="project-bg-overlay">
+                    </div>
                     <img class="project-img" src="./images/vojo-1.jpg" alt="Vojo">
-                    <div class="project-info" onmouseover="animateBoxOn('vojocode', 'vojo', 0)"
-                        onmouseout="animateBoxOff('vojocode', 'vojo', 0)">
+                    <div class="project-info" onmouseover="animateBoxOn('vojocode', 'vojo', 1)"
+                        onmouseout="animateBoxOff('vojocode', 'vojo', 1)">
                         <div class="proj-title-desc">
                             <h3>Vojo</h3>
                             <p>Vojo is a client project built to spec in React as part of a group.</p>
@@ -227,8 +260,8 @@
                     <div class="project-bg-overlay">
                     </div>
                     <img class="project-img" src="./images/face.jpg" alt="Halls of Madness">
-                    <div class="project-info" onmouseover="animateBoxOn('hallscode', 'halls', 1)"
-                        onmouseout="animateBoxOff('hallscode', 'halls', 1)">
+                    <div class="project-info" onmouseover="animateBoxOn('hallscode', 'halls', 2)"
+                        onmouseout="animateBoxOff('hallscode', 'halls', 2)">
                         <div class="proj-title-desc">
                             <h3>Halls of Madness</h3>
                             <p>A challenge to pass functions as props and fetch from an API. Extended to add sound and
@@ -261,8 +294,8 @@
                     <div class="project-bg-overlay">
                     </div>
                     <img class="project-img" src="./images/todo-1.jpg" alt="To Do List Creator">
-                    <div class="project-info" onmouseover="animateBoxOn('todocode', 'todo', 2)"
-                        onmouseout="animateBoxOff('todocode', 'todo', 2)">
+                    <div class="project-info" onmouseover="animateBoxOn('todocode', 'todo', 3)"
+                        onmouseout="animateBoxOff('todocode', 'todo', 3)">
                         <div class="proj-title-desc">
                             <h3>To Do List Creator</h3>
                             <p>A challenge to create an app that allows you to save, read and delete to do list items
@@ -294,8 +327,8 @@
                     <div class="project-bg-overlay">
                     </div>
                     <img class="project-img" src="./images/morse-1.jpg" alt="Morse Code Translator">
-                    <div class="project-info" onmouseover="animateBoxOn('morsecode', 'morse', 3)"
-                        onmouseout="animateBoxOff('morsecode', 'morse', 3)">
+                    <div class="project-info" onmouseover="animateBoxOn('morsecode', 'morse', 4)"
+                        onmouseout="animateBoxOff('morsecode', 'morse', 4)">
                         <div class="proj-title-desc">
                             <h3>To Do List Creator</h3>
                             <p>A challenge to make a morse code translator using array iterators. Completed
@@ -328,8 +361,8 @@
                     <div class="project-bg-overlay">
                     </div>
                     <img class="project-img" src="./images/alien-1.jpg" alt="Alien Invasion">
-                    <div class="project-info" onmouseover="animateBoxOn('alienscode', 'aliens', 4)"
-                        onmouseout="animateBoxOff('alienscode', 'aliens', 4)">
+                    <div class="project-info" onmouseover="animateBoxOn('alienscode', 'aliens', 5)"
+                        onmouseout="animateBoxOff('alienscode', 'aliens', 5)">
                         <div class="proj-title-desc">
                             <h3>Alien Invasion</h3>
                             <p>A timed challenge using OOP to create and fire at random ships in under 150
@@ -356,42 +389,6 @@
                 </div>
             </article>
 
-            <article class="project-parent">
-                <div class="project-content">
-                    <div class="project-bg-overlay">
-                    </div>
-                    <img class="project-img" src="./images/dota.png" alt="Dota Defenders">
-                    <div class="project-info" onmouseover="animateBoxOn('dotacode', 'dota', 5)"
-                        onmouseout="animateBoxOff('dotacode', 'dota', 5)">
-                        <div class="proj-title-desc">
-                            <h3>Dota Defenders</h3>
-                            <p>A personal project to create a randomised ability turn based card battle game.
-                                Inspired
-                                by Dota 2. (Work in progress)</p>
-                        </div>
-                        <div id="dota-icons" class="icons">
-                            <div id="dotacode" class="icon code-link" onmouseover="spinOut('dotacode')"
-                                onmouseout="returnDefault('dotacode')">
-                                <a class="fas fa-code code-ico"></a>
-                                <a class="fab fa-github-square github-ico spin-out"
-                                    href="https://github.com/oguru/alien-invasion" target="_blank"></a>
-                            </div>
-                            <div id="dota" class="icon project-link" onmouseover="spinOut('dota')"
-                                onmouseout="returnDefault('dota')">
-                                <a class="far fa-folder folder-ico nolink"></a>
-                                <a class="fas fa-times folder-open spin-out nolink-cross"></a>
-                            </div>
-                        </div>
-                        <div class="concepts">
-                            <p>React - UI - UX</p>
-                            <p>Authorisation - Database</p>
-                        </div>
-                    </div>
-                </div>
-
-
-            </article>
-            <!-- <iframe src="./404.html" frameborder="0"></iframe> -->
         </div>
 
         <div id="blog-button" class="bot-mid-button bot-btn-anim">
