@@ -20,6 +20,7 @@
             emailjs.init("user_ToP32nWmWFTffBWaEBSUp");
         })();
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="icon" href="./images/logo_favicon.png" type="image/x-icon">
 </head>
 
@@ -198,7 +199,7 @@
                         onmouseout="animateBoxOff('notflixcode', 'notflix', 0)">
                         <div class="proj-title-desc">
                             <h3>Notflix</h3>
-                            <p>An app I built with functionality to query the OMDb API for information on movies and TV shows, then display them to the user.</p>
+                            <p>An app built built to display Movie/TV search results through a modern and user friendly UI.</p>
                         </div>
                         <div id="notflix-icons" class="icons">
                             <div id="notflixcode" class="icon code-link" onmouseover="spinOut('notflixcode')"
@@ -215,8 +216,8 @@
                             </div>
                         </div>
                         <div class="concepts">
-                            <p>UI - UX</p>
-                            <p>React - REST API</p>
+                            <p>React - UI/UX</p>
+                            <p>Material UI - JSS - REST API</p>
                         </div>
                     </div>
                 </div>
@@ -249,7 +250,7 @@
                         <div class="concepts">
                             <p> Authentication </p>
                             <p> Pair Programming </p>
-                            <p> React - Database - UI/UX </p>
+                            <p> React - NoSQL DB - UI/UX </p>
                         </div>
                     </div>
                 </div>
@@ -316,7 +317,7 @@
                             </div>
                         </div>
                         <div class="concepts">
-                            <p>Database - React</p>
+                            <p>React - NoSQL DB</p>
                         </div>
                     </div>
                 </div>
@@ -330,7 +331,7 @@
                     <div class="project-info" onmouseover="animateBoxOn('morsecode', 'morse', 4)"
                         onmouseout="animateBoxOff('morsecode', 'morse', 4)">
                         <div class="proj-title-desc">
-                            <h3>To Do List Creator</h3>
+                            <h3>Morsecode Translator</h3>
                             <p>A challenge to make a morse code translator using array iterators. Completed
                                 with extension to translate
                                 in reverse.</p>
@@ -511,7 +512,10 @@
                     <input type="hidden" name="contact_number" />
                     <input type="text" class="form-box" id="name" placeholder="Name" name="user_name" value="">
                     <input type="email" class="form-box" id="email" placeholder="Email" name="user_email" value="">
-                    <textarea id="message-box" class="form-box" placeholder="Message" name="message"></textarea>
+                    <textarea onfocus="showCaptcha()" id="message-box" class="form-box" placeholder="Message" name="message"></textarea>
+                    <!-- <div id="recaptcha-cont">
+                        <div class="g-recaptcha recaptcha-box" data-callback="recaptchaCallback" data-sitekey="6Lf3x7MZAAAAAKjtsTiE2GOIWQwL3HrSNm2UrlSY"></div>
+                    </div> -->
                     <button onclick="alert('Email Sent!')" class="form-box send-button" id="submit" type="submit"
                         value="Send">
                         <div class="button ">

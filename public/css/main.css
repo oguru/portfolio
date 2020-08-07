@@ -1460,6 +1460,7 @@ nav .bottom-zero {
 #contact .contact-wrapper #contact-flex {
   height: 100%;
   width: 100%;
+  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1479,6 +1480,14 @@ nav .bottom-zero {
   resize: none;
   height: 100px;
   min-height: 50px;
+}
+#contact .contact-wrapper #contact-flex .contact-form .recaptcha-box {
+  display: none;
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+#contact .contact-wrapper #contact-flex .contact-form .show-captcha {
+  display: unset;
 }
 #contact .contact-wrapper #contact-flex .contact-form .form-box {
   padding: 5px;
@@ -1630,10 +1639,13 @@ nav .bottom-zero {
   #contact .contact-wrapper {
     padding: 0 40px;
   }
-  #contact .contact-wrapper .contact-form #name, #contact .contact-wrapper .contact-form #email {
+  #contact .contact-wrapper #contact-flex {
+    padding-bottom: 25px;
+  }
+  #contact .contact-wrapper #contact-flex .contact-form #name, #contact .contact-wrapper #contact-flex .contact-form #email {
     padding: 10px;
   }
-  #contact .contact-wrapper .contact-form .form-box {
+  #contact .contact-wrapper #contact-flex .contact-form .form-box {
     margin-bottom: 20px;
   }
 }

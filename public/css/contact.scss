@@ -30,6 +30,7 @@
             #contact-flex {
                 height: 100%;
                 width: 100%;
+                padding-bottom: $base-spacing * 3;
                 @include flex-column;
 
                 .contact-form {
@@ -44,6 +45,16 @@
                         resize: none;
                         height: 100px;
                         min-height: 50px;
+                    }
+
+                    .recaptcha-box {
+                        display: none;
+                        margin-bottom: $base-spacing * 3;
+                        border-radius: 20px;
+                    }
+
+                    .show-captcha {
+                        display: unset;
                     }
 
                     .form-box {
@@ -205,12 +216,15 @@
             }
             .contact-wrapper {
                 padding: 0 $base-spacing * 8;
-                .contact-form {
-                    #name, #email {
-                        padding:$base-spacing * 2;
-                    }
-                    .form-box {
-                        margin-bottom:  $base-spacing * 4;
+                #contact-flex {
+                    padding-bottom: $base-spacing * 5;
+                    .contact-form {
+                        #name, #email {
+                            padding:$base-spacing * 2;
+                        }
+                        .form-box {
+                            margin-bottom:  $base-spacing * 4;
+                        }
                     }
                 }
             }

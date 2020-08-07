@@ -289,7 +289,24 @@
 	}
 }
 
+@mixin recaptchaAnim {
+	// #contact {
+	// 	#contact-flex {
 
+	// 	}
+	// }
+
+	#recaptcha-cont {
+		animation: show-captcha 1s ease-out;	
+	}
+
+
+	@keyframes show-captcha {
+		0% {
+
+		}
+	}
+}
 
 
 

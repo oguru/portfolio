@@ -10,6 +10,10 @@ window.onload = function () {
    });
 }
 
+function recaptchaCallback(token) {
+   token.length > 0 ? console.log(token.length) : ""
+}
+
 const ignorePointer = (ele, index) => {
    if (index) {
       ele[index].classList.add("ignore-mouse");
@@ -375,6 +379,8 @@ const closeBlog = (name, index) => {
 //contact section
 
 const cvIcon = document.getElementsByClassName("cv-cont")[0];
+const recaptchaBox = document.getElementsByClassName("recaptcha-box")[0];
+const contactForm = document.getElementById("message-box");
 
 const hoverCvIcon = () => {
    cvIcon.classList.add("hover-cv-icon");
@@ -382,4 +388,8 @@ const hoverCvIcon = () => {
 
 const unhoverCvIcon = () => {
    cvIcon.classList.remove("hover-cv-icon");
+}
+
+const showCaptcha = () => {
+   recaptchaBox.classList.add("show-captcha")
 }
