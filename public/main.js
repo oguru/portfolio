@@ -5,10 +5,6 @@ window.onload = function () {
    contactFormHandler();   
 }
 
-// function recaptchaCallback(token) {
-//    token.length > 0 ? console.log(token.length) : ""
-// }
-
 const ignorePointer = (ele, index) => {
    if (index) {
       ele[index].classList.add("ignore-mouse");
