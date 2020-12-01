@@ -374,6 +374,9 @@ const recaptchaBox = document.getElementsByClassName("recaptcha-box")[0];
 const contactForm = document.getElementById("message-box");
 const submitMessageBox = document.getElementsByClassName("submit-form-msg")[0];
 const submitText = document.getElementsByClassName("submit-text")[0];
+const submitSuccess = "Thank you for submitting your enquiry.";
+const captchaError = "There was an error with your captcha. Please try again.";
+const emailingError = "There was a problem sending the email. Please try again later.";
 
 const hoverCvIcon = () => {
    cvIcon.classList.add("hover-cv-icon");
@@ -394,21 +397,33 @@ const showSubmitMessage = (status) => {
 
 const closeSubmitMessage = () => {
    submitMessageBox.classList.remove("submit-form-clicked");
+   if (submitText.innerHTML == submitSuccess)
+   {
+      setTimeout(() => {
+         location.reload();
+      }, 1000);
+   }
 }
 
 const contactFormHandler = () => {
    document.getElementsByClassName('contact-form')[0].addEventListener('submit', function (event) {
       event.preventDefault();
-      // generate the contact number value
-      console.log(grecaptcha.getResponse().length)
       if (grecaptcha.getResponse().length > 1)
       {
-         showSubmitMessage("Thank you for submitting your enquiry.");
-         this.contact_number.value = Math.random() * 100000 | 0;
-         emailjs.sendForm('gmail', 'portfolio', this);
+         emailjs.sendForm('gmail', 'portfolio1', this)
+            .then((response) => {
+               if (response && response.status == 200) {
+                  showSubmitMessage(submitSuccess);            
+               }
+               else {
+                  showSubmitMessage(emailingError);
+               }
+            }, (error) => {
+               showSubmitMessage(emailingError);
+         });
       }
       else {
-         showSubmitMessage("There was an error with your captcha. Please try again.");
+         showSubmitMessage(captchaError);
       }
    });
 }
