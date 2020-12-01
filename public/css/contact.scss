@@ -17,6 +17,62 @@
             color: #fff;
         }
 
+        .submit-form-msg {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: $base-spacing * 2;
+            align-items: center;
+            background-color: $light-bg;
+            color: $primary-bg-darker;
+            border: $primary 1.5px solid;
+            border-radius: $border-radius;
+            position: fixed;
+            box-shadow: 0 0 12px -6px lightgrey;
+            transform: translateY(-110vh);
+            transition-duration: 1s;
+            // margin: auto;
+            width: 250px;
+            height: 120px;
+            pointer-events: none;
+            top: calc(50vh - 60px);
+            left: calc(50vw - 150px);
+            z-index: 499;
+
+            .submit-text {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-grow: 1;
+                margin-bottom: $base-spacing*2;
+            }
+
+            .submit-text-btn {       
+                width: 80px;
+                height: 25px;
+                // padding: $base-spacing * 1.5;
+                // text-align: center;
+                color: white;
+                background: $primary;
+                border: $primary 1.5px solid;
+                border-radius: $border-radius;
+                // border-style: none;
+                cursor: pointer;
+                transition-duration: 0.2s;
+                &:hover {
+                    // border: $primary 1.5px solid;
+                    color: $primary;
+                    background: white;                    
+                }        
+            }
+        }
+
+        .submit-form-msg.submit-form-clicked {
+            transform: translateX(0);
+            pointer-events: unset;
+        }
+
         .contact-wrapper {
 
             @include flex-column;
@@ -35,10 +91,10 @@
 
                 .contact-form {
                     @include flex-column;
-                    width: 100%;
+                    width: 100%;                    
 
                     #name, #email {
-                        padding:$base-spacing * 1.5;
+                        padding: $base-spacing * 1.5;
                     }
 
                     #message-box {
@@ -47,21 +103,33 @@
                         min-height: 50px;
                     }
 
-                    .recaptcha-box {
-                        display: none;
-                        margin-bottom: $base-spacing * 3;
-                        border-radius: 20px;
-                    }
+                    #recaptcha-cont {                        
 
-                    .show-captcha {
-                        display: unset;
+                        .recaptcha-box {
+                            margin-bottom: 0;
+                            transition-duration: 1s;
+                            height: 0px;
+                            opacity: 0;
+                            transform: translateY(-100px);
+                            // display: none;                        
+                            border-radius: $border-radius;
+                            pointer-events: none;
+                        }
+                        .show-captcha {
+                            margin-bottom: $base-spacing * 4;
+                            height: 75px;
+                            opacity: 1;
+                            transform: translateY(0px);
+                            pointer-events: unset;
+                            // display: unset;                        
+                        }
                     }
 
                     .form-box {
                         padding: $base-spacing;
                         width: 100%;
                         background-color: $light-bg;
-                        border-radius: 6px;
+                        border-radius: $border-radius;
                         color: $primary-bg-darker;
                         letter-spacing: 1px;
                         margin-bottom: $base-spacing * 3;

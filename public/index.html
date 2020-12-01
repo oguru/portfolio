@@ -82,6 +82,7 @@
         <div id="about-title">
             <h2>About Me</h2>
             <p>I am a junior front end developer living in Bristol, UK and eager to work within a team bringing ideas to life.</p>
+            <!-- <p>Currently learning the MERN backend stack and React Native.</p> -->
             <!-- <span class="fas fa-ellipsis-h"></span> -->
         </div>
 
@@ -488,7 +489,6 @@
                         <p>Maybe I would get lucky and get through to someone who would appreciate the balls to the wall approach, but the chances of that are probably very limited, so I have adopted to remain passive... for the time being. I'm not afraid of speaking my mind but there is a time and a place.</p>
                         <p>In my opinion, the best approach for now is to show that you have attention to detail through quality work on your portfolio, and if you want to show confidence save it for the interview.</p>
                         <p>So... What do you think? I'd be interested to hear others people's opinions on the matter. Feel free to leave me a comment or send a message!</p>
-
                     </div>
                 </div>
             </article>
@@ -506,6 +506,10 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
+        <div class="submit-form-msg">
+            <p class="submit-text"></p>
+            <button class="submit-text-btn" onclick="closeSubmitMessage()">OK</button>
+        </div>
         <div class="contact-wrapper">
             <div id="contact-flex">
                 <form class="contact-form">
@@ -513,12 +517,16 @@
                     <input type="text" class="form-box" id="name" placeholder="Name" name="user_name" value="">
                     <input type="email" class="form-box" id="email" placeholder="Email" name="user_email" value="">
                     <textarea onfocus="showCaptcha()" id="message-box" class="form-box" placeholder="Message" name="message"></textarea>
-                    <!-- <div id="recaptcha-cont">
-                        <div class="g-recaptcha recaptcha-box" data-callback="recaptchaCallback" data-sitekey="6Lf3x7MZAAAAAKjtsTiE2GOIWQwL3HrSNm2UrlSY"></div>
-                    </div> -->
-                    <button onclick="alert('Email Sent!')" class="form-box send-button" id="submit" type="submit"
+                    <div id="recaptcha-cont">
+                        <div 
+                            class="g-recaptcha recaptcha-box" 
+                            render                             
+                            data-sitekey="6Lf3x7MZAAAAAKjtsTiE2GOIWQwL3HrSNm2UrlSY">
+                        </div>
+                    </div>
+                    <button class="form-box send-button" id="submit" type="submit"
                         value="Send">
-                        <div class="button ">
+                        <div class="button">
                             <span class="fas fa-envelope-open-text send-icon"></span>
                             <span class="send-text">SEND</span>
                         </div>

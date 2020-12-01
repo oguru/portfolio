@@ -1445,6 +1445,53 @@ nav .bottom-zero {
   text-align: center;
   color: #fff;
 }
+#contact .submit-form-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background-color: #f6faf4;
+  color: #052738;
+  border: #01929F 1.5px solid;
+  border-radius: 10px;
+  position: fixed;
+  box-shadow: 0 0 12px -6px lightgrey;
+  transform: translateY(-110vh);
+  transition-duration: 1s;
+  width: 250px;
+  height: 120px;
+  pointer-events: none;
+  top: calc(50vh - 60px);
+  left: calc(50vw - 150px);
+  z-index: 499;
+}
+#contact .submit-form-msg .submit-text {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+#contact .submit-form-msg .submit-text-btn {
+  width: 80px;
+  height: 25px;
+  color: white;
+  background: #01929F;
+  border: #01929F 1.5px solid;
+  border-radius: 10px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+#contact .submit-form-msg .submit-text-btn:hover {
+  color: #01929F;
+  background: white;
+}
+#contact .submit-form-msg.submit-form-clicked {
+  transform: translateX(0);
+  pointer-events: unset;
+}
 #contact .contact-wrapper {
   display: flex;
   flex-direction: column;
@@ -1481,19 +1528,27 @@ nav .bottom-zero {
   height: 100px;
   min-height: 50px;
 }
-#contact .contact-wrapper #contact-flex .contact-form .recaptcha-box {
-  display: none;
-  margin-bottom: 15px;
-  border-radius: 20px;
+#contact .contact-wrapper #contact-flex .contact-form #recaptcha-cont .recaptcha-box {
+  margin-bottom: 0;
+  transition-duration: 1s;
+  height: 0px;
+  opacity: 0;
+  transform: translateY(-100px);
+  border-radius: 10px;
+  pointer-events: none;
 }
-#contact .contact-wrapper #contact-flex .contact-form .show-captcha {
-  display: unset;
+#contact .contact-wrapper #contact-flex .contact-form #recaptcha-cont .show-captcha {
+  margin-bottom: 20px;
+  height: 75px;
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: unset;
 }
 #contact .contact-wrapper #contact-flex .contact-form .form-box {
   padding: 5px;
   width: 100%;
   background-color: #f6faf4;
-  border-radius: 6px;
+  border-radius: 10px;
   color: #052738;
   letter-spacing: 1px;
   margin-bottom: 15px;
