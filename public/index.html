@@ -513,10 +513,9 @@
         <div class="contact-wrapper">
             <div id="contact-flex">
                 <form class="contact-form">
-                    <input type="hidden" name="contact_number" />
                     <input type="text" class="form-box" id="name" placeholder="Name" name="user_name" value="">
-                    <input type="email" class="form-box" id="email" placeholder="Email" name="user_email" value="">
-                    <textarea onfocus="showCaptcha()" id="message-box" class="form-box" placeholder="Message" name="message"></textarea>
+                    <input type="email" class="form-box" id="email" placeholder="Email" name="user_email" value="" required>
+                    <textarea onfocus="showCaptcha()" id="message-box" class="form-box" placeholder="Message" name="message" required></textarea>
                     <div id="recaptcha-cont">
                         <div 
                             class="g-recaptcha recaptcha-box" 
