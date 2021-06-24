@@ -410,10 +410,11 @@ const contactFormHandler = () => {
       event.preventDefault();
       if (grecaptcha.getResponse().length > 1)
       {
-         emailjs.sendForm('gmail', 'portfolio1', this)
+         emailjs.sendForm('hotmail', 'portfolio', this)
             .then((response) => {
+               console.log(response);
                if (response && response.status == 200) {
-                  showSubmitMessage(submitSuccess);            
+                  showSubmitMessage(submitSuccess);               
                }
                else {
                   showSubmitMessage(emailingError);
@@ -421,6 +422,7 @@ const contactFormHandler = () => {
             }, (error) => {
                showSubmitMessage(emailingError);
          });
+         return;
       }
       else {
          showSubmitMessage(captchaError);

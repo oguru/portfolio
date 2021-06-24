@@ -22,7 +22,8 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
-h1, h2, h3, p, li {
+h1, h2, h3, h4, p, li {
+  letter-spacing: 0.3px;
   pointer-events: none;
 }
 

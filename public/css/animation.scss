@@ -114,7 +114,7 @@
 		#circle1 {
 			width: 25vw;
 			height: 25vw;
-			border-top: white 2px solid;
+			border-top: $light-bg 2px solid;
 			border-radius: 100%;
 			margin: auto;
 			position: absolute;
@@ -124,7 +124,7 @@
 		#circle2 {
 			width: 47vw;
 			height: 47vw;
-			border-bottom: white 2px solid;
+			border-bottom: $light-bg 2px solid;
 			border-radius: 100%;
 			margin: auto;
 			position: absolute;
@@ -135,7 +135,7 @@
 		#circle3 {
 			width: 70vw;
 			height: 70vw;
-			border-top: white 2px solid;
+			border-top: $light-bg 2px solid;
 			border-radius: 100%;
 			margin: auto;
 			position: absolute;

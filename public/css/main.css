@@ -10,7 +10,8 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
-h1, h2, h3, p, li {
+h1, h2, h3, h4, p, li {
+  letter-spacing: 0.3px;
   pointer-events: none;
 }
 
@@ -582,7 +583,7 @@ nav .bottom-zero {
 #circles #circle1 {
   width: 25vw;
   height: 25vw;
-  border-top: white 2px solid;
+  border-top: #f6faf4 2px solid;
   border-radius: 100%;
   margin: auto;
   position: absolute;
@@ -591,7 +592,7 @@ nav .bottom-zero {
 #circles #circle2 {
   width: 47vw;
   height: 47vw;
-  border-bottom: white 2px solid;
+  border-bottom: #f6faf4 2px solid;
   border-radius: 100%;
   margin: auto;
   position: absolute;
@@ -601,7 +602,7 @@ nav .bottom-zero {
 #circles #circle3 {
   width: 70vw;
   height: 70vw;
-  border-top: white 2px solid;
+  border-top: #f6faf4 2px solid;
   border-radius: 100%;
   margin: auto;
   position: absolute;
@@ -753,7 +754,7 @@ nav .bottom-zero {
   align-items: center;
 }
 #skills h2 {
-  color: #fb3640;
+  color: black;
   font-size: 20px;
   padding: 0 10px;
   width: 48vw;
@@ -1520,9 +1521,6 @@ nav .bottom-zero {
   align-items: center;
   width: 100%;
 }
-#contact .contact-wrapper #contact-flex .contact-form #name, #contact .contact-wrapper #contact-flex .contact-form #email {
-  padding: 7.5px;
-}
 #contact .contact-wrapper #contact-flex .contact-form #message-box {
   resize: none;
   height: 100px;
@@ -1544,13 +1542,17 @@ nav .bottom-zero {
   transform: translateY(0px);
   pointer-events: unset;
 }
-#contact .contact-wrapper #contact-flex .contact-form .form-box {
+#contact .contact-wrapper #contact-flex .contact-form #submit {
   padding: 5px;
+}
+#contact .contact-wrapper #contact-flex .contact-form .form-box {
+  font-size: 14px;
+  padding: 7.5px;
   width: 100%;
   background-color: #f6faf4;
   border-radius: 10px;
   color: #052738;
-  letter-spacing: 1px;
+  letter-spacing: 0.3px;
   margin-bottom: 15px;
 }
 #contact .contact-wrapper #contact-flex .contact-form .send-button {
@@ -1697,10 +1699,8 @@ nav .bottom-zero {
   #contact .contact-wrapper #contact-flex {
     padding-bottom: 25px;
   }
-  #contact .contact-wrapper #contact-flex .contact-form #name, #contact .contact-wrapper #contact-flex .contact-form #email {
-    padding: 10px;
-  }
   #contact .contact-wrapper #contact-flex .contact-form .form-box {
+    padding: 10px;
     margin-bottom: 20px;
   }
 }

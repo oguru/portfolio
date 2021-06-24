@@ -93,10 +93,6 @@
                     @include flex-column;
                     width: 100%;                    
 
-                    #name, #email {
-                        padding: $base-spacing * 1.5;
-                    }
-
                     #message-box {
                         resize: none;
                         height: 100px;
@@ -125,13 +121,18 @@
                         }
                     }
 
-                    .form-box {
+                    #submit {
                         padding: $base-spacing;
+                    }
+
+                    .form-box {
+                        font-size: 14px;
+                        padding: $base-spacing * 1.5;
                         width: 100%;
                         background-color: $light-bg;
                         border-radius: $border-radius;
                         color: $primary-bg-darker;
-                        letter-spacing: 1px;
+                        letter-spacing: 0.3px;
                         margin-bottom: $base-spacing * 3;
                     }
 
@@ -287,10 +288,8 @@
                 #contact-flex {
                     padding-bottom: $base-spacing * 5;
                     .contact-form {
-                        #name, #email {
-                            padding:$base-spacing * 2;
-                        }
                         .form-box {
+                            padding:$base-spacing * 2;
                             margin-bottom:  $base-spacing * 4;
                         }
                     }
